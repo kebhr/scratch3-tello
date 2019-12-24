@@ -44,6 +44,11 @@ class Scratch3Tello {
             blockIconURI: blockIconURI,
             blocks: [
                 {
+                    opcode: 'connect',
+                    text: 'connect',
+                    blockType: BlockType.COMMAND
+                },
+                {
                     opcode: 'writeLog',
                     text: 'log [TEXT]',
                     blockType: BlockType.COMMAND,
@@ -58,6 +63,10 @@ class Scratch3Tello {
             menus: {
             }
         };
+    }
+
+    connect () {
+        telloProcessor.connect();
     }
 
     writeLog (args) {

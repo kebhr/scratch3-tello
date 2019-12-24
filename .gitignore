@@ -33,3 +33,7 @@
 /scratch-desktop/src/renderer/*
 !/scratch-desktop/src/renderer/app.jsx
 !/scratch-desktop/src/renderer/telloProcessor.js
+!/scratch-desktop/src/main/
+/scratch-desktop/src/main/*
+!/scratch-desktop/src/main/index.js
+!/scratch-desktop/src/main/TelloProcessor.js
