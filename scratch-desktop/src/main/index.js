@@ -181,3 +181,7 @@ ipcMain.on('open-about-window', () => {
 ipcMain.once('tello-initialize', () => {
     telloProcessor.initialize();
 });
+
+ipcMain.on('send', (ev, arg) => {
+    telloProcessor.send(arg);
+});

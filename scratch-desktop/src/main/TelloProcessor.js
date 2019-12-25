@@ -2,7 +2,6 @@ const dgram = require('dgram');
 
 class TelloProcessor {
     initialize () {
-        
         this.client = dgram.createSocket('udp4');
 
         this.send('command');

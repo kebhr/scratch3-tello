@@ -49,6 +49,104 @@ class Scratch3Tello {
                     blockType: BlockType.COMMAND
                 },
                 {
+                    opcode: 'takeoff',
+                    text: 'takeoff',
+                    blockType: BlockType.COMMAND
+                },
+                {
+                    opcode: 'land',
+                    text: 'land',
+                    blockType: BlockType.COMMAND
+                },
+                {
+                    opcode: 'up',
+                    text: 'up [X]',
+                    blockType: BlockType.COMMAND,
+                    arguments: {
+                        X: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        }
+                    }
+                },
+                {
+                    opcode: 'down',
+                    text: 'down [X]',
+                    blockType: BlockType.COMMAND,
+                    arguments: {
+                        X: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        }
+                    }
+                },
+                {
+                    opcode: 'left',
+                    text: 'left [X]',
+                    blockType: BlockType.COMMAND,
+                    arguments: {
+                        X: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        }
+                    }
+                },
+                {
+                    opcode: 'right',
+                    text: 'right [X]',
+                    blockType: BlockType.COMMAND,
+                    arguments: {
+                        X: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        }
+                    }
+                },
+                {
+                    opcode: 'forward',
+                    text: 'forward [X]',
+                    blockType: BlockType.COMMAND,
+                    arguments: {
+                        X: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        }
+                    }
+                },
+                {
+                    opcode: 'back',
+                    text: 'back [X]',
+                    blockType: BlockType.COMMAND,
+                    arguments: {
+                        X: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        }
+                    }
+                },
+                {
+                    opcode: 'cw',
+                    text: 'cw [X]',
+                    blockType: BlockType.COMMAND,
+                    arguments: {
+                        X: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 90
+                        }
+                    }
+                },
+                {
+                    opcode: 'ccw',
+                    text: 'ccw [X]',
+                    blockType: BlockType.COMMAND,
+                    arguments: {
+                        X: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 90
+                        }
+                    }
+                },
+                {
                     opcode: 'writeLog',
                     text: 'log [TEXT]',
                     blockType: BlockType.COMMAND,
@@ -67,6 +165,46 @@ class Scratch3Tello {
 
     connect () {
         telloProcessor.connect();
+    }
+
+    takeoff () {
+        telloProcessor.send('takeoff');
+    }
+
+    land () {
+        telloProcessor.send('land');
+    }
+
+    up (args) {
+        telloProcessor.send(`up ${Cast.toString(args.X)}`);
+    }
+
+    down (args) {
+        telloProcessor.send(`down ${Cast.toString(args.X)}`);
+    }
+
+    left (args) {
+        telloProcessor.send(`left ${Cast.toString(args.X)}`);
+    }
+
+    right (args) {
+        telloProcessor.send(`right ${Cast.toString(args.X)}`);
+    }
+
+    forward (args) {
+        telloProcessor.send(`forward ${Cast.toString(args.X)}`);
+    }
+
+    back (args) {
+        telloProcessor.send(`back ${Cast.toString(args.X)}`);
+    }
+
+    cw (args) {
+        telloProcessor.send(`cw ${Cast.toString(args.X)}`);
+    }
+
+    ccw (args) {
+        telloProcessor.send(`ccw ${Cast.toString(args.X)}`);
     }
 
     writeLog (args) {
