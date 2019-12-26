@@ -13,12 +13,4 @@ export class TelloProcessor {
     send (cmd) {
         ipcRenderer.send('send', cmd);
     }
-
-    log () {
-        alert('log');
-    }
-
-    takeoff () {
-
-    }
 }

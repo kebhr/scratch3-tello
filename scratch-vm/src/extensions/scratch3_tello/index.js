@@ -145,17 +145,6 @@ class Scratch3Tello {
                             defaultValue: 90
                         }
                     }
-                },
-                {
-                    opcode: 'writeLog',
-                    text: 'log [TEXT]',
-                    blockType: BlockType.COMMAND,
-                    arguments: {
-                        TEXT: {
-                            type: ArgumentType.STRING,
-                            defaultValue: 'hello'
-                        }
-                    }
                 }
             ],
             menus: {
@@ -205,12 +194,6 @@ class Scratch3Tello {
 
     ccw (args) {
         telloProcessor.send(`ccw ${Cast.toString(args.X)}`);
-    }
-
-    writeLog (args) {
-        log.log(Cast.toString(args.TEXT));
-
-        telloProcessor.log();
     }
 
 }
