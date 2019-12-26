@@ -2,6 +2,7 @@ const ArgumentType = require('../../extension-support/argument-type');
 const BlockType = require('../../extension-support/block-type');
 const Cast = require('../../util/cast');
 const log = require('../../util/log');
+const formatMessage = require('format-message');
 
 /**
  * Icon svg to be displayed at the left edge of each extension block, encoded as a data URI.
@@ -17,6 +18,65 @@ const blockIconURI = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYA
 // eslint-disable-next-line max-len
 const menuIconURI = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAI1JREFUeNpiYBgFo2AUjIJRQCzQB+L7QPyfCng/EPNT24HrqeQ4GJ5PjKVMJDjwA5U9/IAYRYwkGAiKkgIgdsAhrwDFyA7A5YgDQNxI7zRajxaF9dQwlGmw58xRB446cNSBow4cdeCoA0cdOOrAUQeOOnDUgYPFgQ9o3Aukat+ZJh3zUTAKRsFQBAABBgCoVDVJPyGtBgAAAABJRU5ErkJggg==';
 
+const message = {
+    connect: {
+        'ja': '接続する',
+        'ja-Hira': 'せつぞくする',
+        'en': 'connect'
+    },
+    takeoff: {
+        'ja': '離陸する',
+        'ja-Hira': 'りりくする',
+        'en': 'takeoff'
+    },
+    land: {
+        'ja': '着陸する',
+        'ja-Hira': 'ちゃくりくする',
+        'en': 'land'
+    },
+    up: {
+        'ja': '上に [X]cm 上がる',
+        'ja-Hira': 'うえに [X] センチあがる',
+        'en': 'up [X] cm'
+    },
+    down: {
+        'ja': '下に [X]cm 下がる',
+        'ja-Hira': 'したに [X] センチさがる',
+        'en': 'down [X] cm'
+    },
+    left: {
+        'ja': '左に [X]cm 動く',
+        'ja-Hira': 'ひだりに [X] センチうごく',
+        'en': 'move left [X] cm'
+    },
+    right: {
+        'ja': '右に [X]cm 動く',
+        'ja-Hira': 'みぎに [X] センチうごく',
+        'en': 'move right [X] cm'
+    },
+    forward: {
+        'ja': '前に [X]cm 進む',
+        'ja-Hira': 'まえに [X] センチすすむ',
+        'en': 'move forward [X] cm'
+    },
+    back: {
+        'ja': '後ろに [X]cm 下がる',
+        'ja-Hira': 'うしろに [X] センチさがる',
+        'en': 'move back [X] cm'
+    },
+    cw: {
+        'ja': '[X] 度回転する',
+        'ja-Hira': '[X] どまわる',
+        'en': 'rotate [X] degrees clockwise'
+    },
+    ccw: {
+        'ja': '[X] 度逆回転する',
+        'ja-Hira': '[X] どぎゃくにまわる',
+        'en': 'rotate [X] degrees counterclockwise'
+    }
+
+};
+
 /**
  * Class for the Tello
  * @param {Runtime} runtime - the runtime instantiating this block package.
@@ -29,14 +89,18 @@ class Scratch3Tello {
          * @type {Runtime}
          */
         this.runtime = runtime;
-
-
     }
 
     /**
      * @returns {object} metadata for this extension and its blocks.
      */
     getInfo () {
+        if (formatMessage.setup().locale === 'ja' || formatMessage.setup().locale === 'ja-Hira') {
+            this.locale = formatMessage.setup().locale;
+        } else {
+            this.locale = 'en';
+        }
+
         return {
             id: 'tello',
             name: 'Tello',
@@ -45,22 +109,22 @@ class Scratch3Tello {
             blocks: [
                 {
                     opcode: 'connect',
-                    text: 'connect',
+                    text: message.connect[this.locale],
                     blockType: BlockType.COMMAND
                 },
                 {
                     opcode: 'takeoff',
-                    text: 'takeoff',
+                    text: message.takeoff[this.locale],
                     blockType: BlockType.COMMAND
                 },
                 {
                     opcode: 'land',
-                    text: 'land',
+                    text: message.land[this.locale],
                     blockType: BlockType.COMMAND
                 },
                 {
                     opcode: 'up',
-                    text: 'up [X]',
+                    text: message.up[this.locale],
                     blockType: BlockType.COMMAND,
                     arguments: {
                         X: {
@@ -71,7 +135,7 @@ class Scratch3Tello {
                 },
                 {
                     opcode: 'down',
-                    text: 'down [X]',
+                    text: message.down[this.locale],
                     blockType: BlockType.COMMAND,
                     arguments: {
                         X: {
@@ -82,7 +146,7 @@ class Scratch3Tello {
                 },
                 {
                     opcode: 'left',
-                    text: 'left [X]',
+                    text: message.left[this.locale],
                     blockType: BlockType.COMMAND,
                     arguments: {
                         X: {
@@ -93,7 +157,7 @@ class Scratch3Tello {
                 },
                 {
                     opcode: 'right',
-                    text: 'right [X]',
+                    text: message.right[this.locale],
                     blockType: BlockType.COMMAND,
                     arguments: {
                         X: {
@@ -104,7 +168,7 @@ class Scratch3Tello {
                 },
                 {
                     opcode: 'forward',
-                    text: 'forward [X]',
+                    text: message.forward[this.locale],
                     blockType: BlockType.COMMAND,
                     arguments: {
                         X: {
@@ -115,7 +179,7 @@ class Scratch3Tello {
                 },
                 {
                     opcode: 'back',
-                    text: 'back [X]',
+                    text: message.back[this.locale],
                     blockType: BlockType.COMMAND,
                     arguments: {
                         X: {
@@ -126,7 +190,7 @@ class Scratch3Tello {
                 },
                 {
                     opcode: 'cw',
-                    text: 'cw [X]',
+                    text: message.cw[this.locale],
                     blockType: BlockType.COMMAND,
                     arguments: {
                         X: {
@@ -137,7 +201,7 @@ class Scratch3Tello {
                 },
                 {
                     opcode: 'ccw',
-                    text: 'ccw [X]',
+                    text: message.ccw[this.locale],
                     blockType: BlockType.COMMAND,
                     arguments: {
                         X: {
