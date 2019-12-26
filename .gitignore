@@ -5,6 +5,7 @@
 !README.md
 
 /scratch-vm/*
+!/scratch-vm/LICENSE
 !/scratch-vm/src
 /scratch-vm/src/*
 !scratch-vm/src/extensions
@@ -15,6 +16,7 @@
 !/scratch-vm/src/extension-support/extension-manager.js
 
 /scratch-gui/*
+!/scratch-gui/LICENSE
 !/scratch-gui/src
 /scratch-gui/src/*
 !/scratch-gui/src/lib
@@ -27,6 +29,7 @@
 !/scratch-gui/src/lib/libraries/extensions/tello
 
 /scratch-desktop/*
+!/scratch-desktop/LICENSE
 !/scratch-desktop/src
 /scratch-desktop/src/*
 !/scratch-desktop/src/renderer
