@@ -185,3 +185,7 @@ ipcMain.once('tello-initialize', () => {
 ipcMain.on('send', (ev, arg) => {
     telloProcessor.request(arg);
 });
+
+ipcMain.on('state', (ev, arg) => {
+    ev.sender.send('state', telloProcessor.state(arg));
+});

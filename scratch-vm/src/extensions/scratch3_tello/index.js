@@ -73,6 +73,76 @@ const message = {
         'ja': '[X] 度左に回る',
         'ja-Hira': '[X] どひだりにまわる',
         'en': 'rotate [X] degrees left'
+    },
+    pitch: {
+        'ja': 'ピッチ',
+        'ja-Hira': 'ピッチ',
+        'en': 'pitch'
+    },
+    roll: {
+        'ja': 'ロール',
+        'ja-Hira': 'ロール',
+        'en': 'roll'
+    },
+    yaw: {
+        'ja': 'ヨー',
+        'ja-Hira': 'ヨー',
+        'en': 'yaw'
+    },
+    vgx: {
+        'ja': 'x方向の速度',
+        'ja-Hira': 'xほうこうのはやさ',
+        'en': 'speed x'
+    },
+    vgy: {
+        'ja': 'y方向の速度',
+        'ja-Hira': 'yほうこうのはやさ',
+        'en': 'speed y'
+    },
+    vgz: {
+        'ja': 'z方向の速度',
+        'ja-Hira': 'zほうこうのはやさ',
+        'en': 'speed z'
+    },
+    tof: {
+        'ja': 'TOF 距離',
+        'ja-Hira': 'TOF きょり',
+        'en': 'TOF distance'
+    },
+    height: {
+        'ja': '高さ',
+        'ja-Hira': 'たかさ',
+        'en': 'height'
+    },
+    bat: {
+        'ja': 'バッテリー残量',
+        'ja-Hira': 'バッテリーざんりょう',
+        'en': 'battery remaining'
+    },
+    baro: {
+        'ja': '気圧計による高さ',
+        'ja-Hira': 'きあつけいによるたかさ',
+        'en': 'height by barometer'
+    },
+    time: {
+        'ja': '飛行時間',
+        'ja-Hira': 'ひこうじかん',
+        'en': 'flying time'
+    },
+    agx: {
+        'ja': 'x方向の加速度',
+        'ja-Hira': 'xほうこうのかそくど',
+        'en': 'acceleration x'
+    },
+    agy: {
+        'ja': 'y方向の加速度',
+        'ja-Hira': 'yほうこうのかそくど',
+        'en': 'acceleration y'
+    },
+    agz: {
+        'ja': 'z方向の加速度',
+        'ja-Hira': 'zほうこうのかそくど',
+        'en': 'acceleration z'
     }
 
 };
@@ -122,6 +192,7 @@ class Scratch3Tello {
                     text: message.land[this.locale],
                     blockType: BlockType.COMMAND
                 },
+                '---',
                 {
                     opcode: 'up',
                     text: message.up[this.locale],
@@ -209,6 +280,77 @@ class Scratch3Tello {
                             defaultValue: 90
                         }
                     }
+                },
+                '---',
+                {
+                    opcode: 'pitch',
+                    text: message.pitch[this.locale],
+                    blockType: BlockType.REPORTER
+                },
+                {
+                    opcode: 'roll',
+                    text: message.roll[this.locale],
+                    blockType: BlockType.REPORTER
+                },
+                {
+                    opcode: 'yaw',
+                    text: message.yaw[this.locale],
+                    blockType: BlockType.REPORTER
+                },
+                {
+                    opcode: 'vgx',
+                    text: message.vgx[this.locale],
+                    blockType: BlockType.REPORTER
+                },
+                {
+                    opcode: 'vgy',
+                    text: message.vgy[this.locale],
+                    blockType: BlockType.REPORTER
+                },
+                {
+                    opcode: 'vgz',
+                    text: message.vgz[this.locale],
+                    blockType: BlockType.REPORTER
+                },
+                {
+                    opcode: 'tof',
+                    text: message.tof[this.locale],
+                    blockType: BlockType.REPORTER
+                },
+                {
+                    opcode: 'height',
+                    text: message.height[this.locale],
+                    blockType: BlockType.REPORTER
+                },
+                {
+                    opcode: 'bat',
+                    text: message.bat[this.locale],
+                    blockType: BlockType.REPORTER
+                },
+                {
+                    opcode: 'baro',
+                    text: message.baro[this.locale],
+                    blockType: BlockType.REPORTER
+                },
+                {
+                    opcode: 'time',
+                    text: message.time[this.locale],
+                    blockType: BlockType.REPORTER
+                },
+                {
+                    opcode: 'agx',
+                    text: message.agx[this.locale],
+                    blockType: BlockType.REPORTER
+                },
+                {
+                    opcode: 'agy',
+                    text: message.agy[this.locale],
+                    blockType: BlockType.REPORTER
+                },
+                {
+                    opcode: 'agz',
+                    text: message.agz[this.locale],
+                    blockType: BlockType.REPORTER
                 }
             ],
             menus: {
@@ -260,5 +402,60 @@ class Scratch3Tello {
         telloProcessor.send(`ccw ${Cast.toString(args.X)}`);
     }
 
+    pitch () {
+        return telloProcessor.state('pitch');
+    }
+
+    roll () {
+        return telloProcessor.state('roll');
+    }
+
+    yaw () {
+        return telloProcessor.state('yaw');
+    }
+
+    vgx () {
+        return telloProcessor.state('vgx');
+    }
+
+    vgy () {
+        return telloProcessor.state('vgy');
+    }
+
+    vgz () {
+        return telloProcessor.state('vgz');
+    }
+
+    tof () {
+        return telloProcessor.state('tof');
+    }
+
+    height () {
+        return telloProcessor.state('h');
+    }
+
+    bat () {
+        return telloProcessor.state('bat');
+    }
+
+    baro () {
+        return telloProcessor.state('baro');
+    }
+
+    time () {
+        return telloProcessor.state('time');
+    }
+
+    agx () {
+        return telloProcessor.state('agx');
+    }
+
+    agy () {
+        return telloProcessor.state('agy');
+    }
+
+    agz () {
+        return telloProcessor.state('agz');
+    }
 }
 module.exports = Scratch3Tello;

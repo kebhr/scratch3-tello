@@ -13,4 +13,19 @@ export class TelloProcessor {
     send (cmd) {
         ipcRenderer.send('send', cmd);
     }
+
+    async state (param) {
+        ipcRenderer.send('state', param);
+
+        const response = await this.statePromise();
+        return response;
+    }
+
+    statePromise () {
+        return new Promise(resolve => {
+            ipcRenderer.once('state', (ev, arg) => {
+                resolve(arg);
+            });
+        });
+    }
 }

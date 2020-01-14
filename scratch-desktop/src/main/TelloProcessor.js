@@ -26,14 +26,18 @@ class TelloProcessor {
         });
 
         // Tello State
-        // this.server.on('message', (message, remote) => {
-        //     // remote: { address: '192.168.10.1', family: 'IPv4', port: 8889, size: 127 }
-        //     // message: <Buffer 70 69 74 63 68 ... >
-        //     const readableMessage = message.toString();
-        //     console.log(readableMessage);
-        // });
+        this.server.on('message', (message, remote) => {
+            // remote: { address: '192.168.10.1', family: 'IPv4', port: 8889, size: 127 }
+            // message: <Buffer 70 69 74 63 68 ... >
+            const readableMessage = message.toString();
+            // console.log(readableMessage);
+            this.data = [];
+            for (const e of readableMessage.slice(0, -1).split(';')) {
+                this.data[e.split(':')[0]] = e.split(':')[1];
+            }
+        });
 
-        // this.server.bind(8890, '0.0.0.0');
+        this.server.bind(8890, '0.0.0.0');
     }
     
 
@@ -42,6 +46,10 @@ class TelloProcessor {
         this.queue.push(cmd);
 
         this.inquire();
+    }
+
+    state (param) {
+        return this.data[param];
     }
 
     // If executing command is nothing and waiting queue has some element, send first command to Tello
