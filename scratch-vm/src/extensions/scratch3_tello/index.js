@@ -65,14 +65,14 @@ const message = {
         'en': 'move back [X] cm'
     },
     cw: {
-        'ja': '[X] 度回転する',
-        'ja-Hira': '[X] どまわる',
-        'en': 'rotate [X] degrees clockwise'
+        'ja': '[X] 度右に回る',
+        'ja-Hira': '[X] どみぎにまわる',
+        'en': 'rotate [X] degrees right'
     },
     ccw: {
-        'ja': '[X] 度逆回転する',
-        'ja-Hira': '[X] どぎゃくにまわる',
-        'en': 'rotate [X] degrees counterclockwise'
+        'ja': '[X] 度左に回る',
+        'ja-Hira': '[X] どひだりにまわる',
+        'en': 'rotate [X] degrees left'
     }
 
 };
