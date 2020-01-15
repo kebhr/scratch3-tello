@@ -105,14 +105,14 @@ const message = {
         'en': 'speed z'
     },
     tof: {
-        'ja': 'TOF 距離',
-        'ja-Hira': 'TOF きょり',
-        'en': 'TOF distance'
+        'ja': '地面からの高度',
+        'ja-Hira': 'じめんからのたかさ',
+        'en': 'height from ground'
     },
     height: {
-        'ja': '高さ',
-        'ja-Hira': 'たかさ',
-        'en': 'height'
+        'ja': '離陸した場所からの高度',
+        'ja-Hira': 'りりくしたばしょからのたかさ',
+        'en': 'height from takeoff point'
     },
     bat: {
         'ja': 'バッテリー残量',
