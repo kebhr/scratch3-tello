@@ -7,6 +7,12 @@ class TelloProcessor {
         this.client = dgram.createSocket('udp4');
         this.server = dgram.createSocket('udp4');
 
+        this.client.bind({
+            address: '0.0.0.0',
+            port: 40001,
+            exclusive: true
+        });
+
         this.send('command');
         this.executing = true;
 
