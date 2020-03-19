@@ -154,6 +154,8 @@ class Scratch3Tello {
          * @type {Runtime}
          */
         this.runtime = runtime;
+        this.state = {};
+        this.getState();
     }
 
     /**
@@ -348,6 +350,14 @@ class Scratch3Tello {
         };
     }
 
+    getState () {
+        setInterval(() => {
+            telloProcessor.state().then(response => {
+                this.state = JSON.parse(response);
+            });
+        }, 100);
+    }
+
     takeoff () {
         telloProcessor.send('takeoff');
     }
@@ -389,59 +399,59 @@ class Scratch3Tello {
     }
 
     pitch () {
-        return telloProcessor.state('pitch');
+        return this.state.pitch;
     }
 
     roll () {
-        return telloProcessor.state('roll');
+        return this.state.roll;
     }
 
     yaw () {
-        return telloProcessor.state('yaw');
+        return this.state.yaw;
     }
 
     vgx () {
-        return telloProcessor.state('vgx');
+        return this.state.vgx;
     }
 
     vgy () {
-        return telloProcessor.state('vgy');
+        return this.state.vgy;
     }
 
     vgz () {
-        return telloProcessor.state('vgz');
+        return this.state.vgz;
     }
 
     tof () {
-        return telloProcessor.state('tof');
+        return this.state.tof;
     }
 
     height () {
-        return telloProcessor.state('h');
+        return this.state.h;
     }
 
     bat () {
-        return telloProcessor.state('bat');
+        return this.state.bat;
     }
 
     baro () {
-        return telloProcessor.state('baro');
+        return this.state.baro;
     }
 
     time () {
-        return telloProcessor.state('time');
+        return this.state.time;
     }
 
     agx () {
-        return telloProcessor.state('agx');
+        return this.state.agx;
     }
 
     agy () {
-        return telloProcessor.state('agy');
+        return this.state.agy;
     }
 
     agz () {
-        return telloProcessor.state('agz');
+        return this.state.agz;
     }
 }
 module.exports = Scratch3Tello;

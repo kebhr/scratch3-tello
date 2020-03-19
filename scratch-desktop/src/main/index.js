@@ -186,6 +186,7 @@ ipcMain.on('send', (ev, arg) => {
     telloProcessor.request(arg);
 });
 
-ipcMain.on('state', (ev, arg) => {
-    ev.sender.send('state', telloProcessor.state(arg));
+ipcMain.on('state', ev => {
+    const state = telloProcessor.state();
+    ev.sender.send('state-reply', JSON.stringify(state));
 });

@@ -37,7 +37,7 @@ class TelloProcessor {
             // message: <Buffer 70 69 74 63 68 ... >
             const readableMessage = message.toString();
             // console.log(readableMessage);
-            this.data = [];
+            this.data = {};
             for (const e of readableMessage.slice(0, -1).split(';')) {
                 this.data[e.split(':')[0]] = e.split(':')[1];
             }
@@ -54,8 +54,8 @@ class TelloProcessor {
         this.inquire();
     }
 
-    state (param) {
-        return this.data[param];
+    state () {
+        return this.data;
     }
 
     // If executing command is nothing and waiting queue has some element, send first command to Tello
