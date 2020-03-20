@@ -1,10 +1,9 @@
 import {ipcRenderer, shell} from 'electron';
 import bindAll from 'lodash.bindall';
-import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {compose} from 'redux';
-import GUI, {AppStateHOC, TitledHOC} from 'scratch-gui';
+import GUI, {AppStateHOC} from 'scratch-gui';
 
 import ElectronStorageHelper from '../common/ElectronStorageHelper';
 
@@ -100,8 +99,8 @@ const ScratchDesktopHOC = function (WrappedComponent) {
 // the hierarchy of HOC constructor calls clearer here; it has nothing to do with redux's
 // ability to compose reducers.
 const WrappedGui = compose(
-    AppStateHOC,
-    ScratchDesktopHOC
+    ScratchDesktopHOC,
+    AppStateHOC
 )(GUI);
 
 ReactDOM.render(<WrappedGui />, appTarget);
