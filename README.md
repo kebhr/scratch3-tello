@@ -5,11 +5,17 @@ Scratch 3.0 for Tello.
 This repository is under development.
 
 # Build
-Run `build.sh`
+```bash
+$ mkdir scratch3-tello
+$ cd scratch3-tello
+$ wget https://raw.githubusercontent.com/kebhr/scratch3-tello/master/build.sh
+$ chmod +x build.sh
+$ ./build.sh
+```
 
 # Run
 ```bash
-cd scratch-desktop
-npm run build-gui
-npm start
+$ cd scratch-desktop
+$ npm run build-gui
+$ npm start
 ```
