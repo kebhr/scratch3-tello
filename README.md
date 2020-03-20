@@ -4,7 +4,7 @@ Scratch 3.0 for Tello.
 
 This repository is under development.
 
-# Build
+## Build
 ```bash
 $ mkdir scratch3-tello
 $ cd scratch3-tello
@@ -13,7 +13,7 @@ $ chmod +x build.sh
 $ ./build.sh
 ```
 
-# Run
+## Run
 ```bash
 $ cd scratch-desktop
 $ npm run build-gui
