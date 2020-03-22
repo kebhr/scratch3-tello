@@ -19,3 +19,5 @@ $ cd scratch-desktop
 $ npm run build-gui
 $ npm start
 ```
+
+If you fail load Tello extension, please run `relink.sh`.
