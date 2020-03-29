@@ -15,5 +15,5 @@ cd node_modules/scratch-gui
 npm link scratch-vm
 cd ../../../
 git clone https://github.com/kebhr/scratch3-tello
-cp -r scratch3-tello/ ./
+cp -r scratch3-tello/. ./
 rm -rf scratch3-tello/
