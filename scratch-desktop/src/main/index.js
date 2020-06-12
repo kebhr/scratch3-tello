@@ -1,12 +1,16 @@
 import {BrowserWindow, Menu, app, dialog, ipcMain, systemPreferences} from 'electron';
 import fs from 'fs';
 import path from 'path';
-import {format as formatUrl} from 'url';
+import {URL} from 'url';
 
 import {getFilterForExtension} from './FileFilters';
 import telemetry from './ScratchDesktopTelemetry';
 import MacOSMenu from './MacOSMenu';
+import log from '../common/log.js';
 import TelloProcessor from './TelloProcessor';
+
+// suppress deprecation warning; this will be the default in Electron 9
+app.allowRendererProcessReuse = true;
 
 telemetry.appWasOpened();
 
@@ -60,34 +64,31 @@ const displayPermissionDeniedWarning = (browserWindow, permissionType) => {
  * @param {*} search - the optional "search" parameters (the part of the URL after '?'), like "route=about"
  * @returns {string} - an absolute URL as a string
  */
-const makeFullUrl = (url, search = null) =>
-    encodeURI(formatUrl(isDevelopment ?
-        { // Webpack Dev Server
-            hostname: 'localhost',
-            pathname: url,
-            port: process.env.ELECTRON_WEBPACK_WDS_PORT,
-            protocol: 'http',
-            search,
-            slashes: true
-        } : { // production / bundled
-            pathname: path.join(__dirname, url),
-            protocol: 'file',
-            search,
-            slashes: true
-        }
-    ));
+const makeFullUrl = (url, search = null) => {
+    const baseUrl = (isDevelopment ?
+        `http://localhost:${process.env.ELECTRON_WEBPACK_WDS_PORT}/` :
+        `file://${__dirname}/`
+    );
+    const fullUrl = new URL(url, baseUrl);
+    if (search) {
+        fullUrl.search = search; // automatically percent-encodes anything that needs it
+    }
+    return fullUrl.toString();
+};
 
 /**
  * Prompt in a platform-specific way for permission to access the microphone or camera, if Electron supports doing so.
  * Any application-level checks, such as whether or not a particular frame or document should be allowed to ask,
  * should be done before calling this function.
+ * This function may return a Promise!
  *
  * @param {string} mediaType - one of Electron's media types, like 'microphone' or 'camera'
- * @returns {boolean} - true if permission granted, false otherwise.
+ * @returns {boolean|Promise.<boolean>} - true if permission granted, false otherwise.
  */
-const askForMediaAccess = async mediaType => {
+const askForMediaAccess = mediaType => {
     if (systemPreferences.askForMediaAccess) {
         // Electron currently only implements this on macOS
+        // This returns a Promise
         return systemPreferences.askForMediaAccess(mediaType);
     }
     // For other platforms we can't reasonably do anything other than assume we have access.
@@ -107,7 +108,7 @@ const handlePermissionRequest = async (webContents, permission, callback, detail
         // deny: request is for some other kind of access like notifications or pointerLock
         return callback(false);
     }
-    const requiredBase = makeFullUrl('/');
+    const requiredBase = makeFullUrl('');
     if (details.requestingUrl.indexOf(requiredBase) !== 0) {
         // deny: request came from a URL outside of our "sandbox"
         return callback(false);
@@ -295,10 +296,8 @@ app.on('ready', () => {
                 // WARNING: depending on a lot of things including the version of Electron `installExtension` might
                 // return a promise that never resolves, especially if the extension is already installed.
                 installExtension(extension).then(
-                    // eslint-disable-next-line no-console
-                    extensionName => console.log(`Installed dev extension: ${extensionName}`),
-                    // eslint-disable-next-line no-console
-                    errorMessage => console.error(`Error installing dev extension: ${errorMessage}`)
+                    extensionName => log(`Installed dev extension: ${extensionName}`),
+                    errorMessage => log.error(`Error installing dev extension: ${errorMessage}`)
                 );
             }
         });
