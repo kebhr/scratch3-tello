@@ -4,6 +4,17 @@ Scratch 3.0 for Tello.
 
 This repository is under development.
 
+## Release
+You can download the binary [here](https://github.com/kebhr/scratch3-tello/releases).  
+
+### Instruction
+1. Download the binary.
+2. Connect to Tello wifi.
+3. Start the app.
+4. Activate Tello extension.
+
+**NOTE:** If you are having trouble connecting to Tello, close the app, restart Tello and start the app again.
+
 ## Build
 ```bash
 $ mkdir scratch3-tello
