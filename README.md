@@ -13,8 +13,9 @@ You can download the binary [here](https://github.com/kebhr/scratch3-tello/relea
 3. Start the app.
 4. Activate Tello extension.
 
-**NOTE:** If you are having trouble connecting to Tello, close the app, restart Tello and start the app again.  
-Connect to Tello before launching the app; if you connect to Tello after the app is launched, the extension will **not** be able to send commands to Tello.
+**NOTE:**
+- If you are having trouble connecting to Tello, close the app, restart Tello and start the app again.  
+- Connect to Tello before launching the app. If you connect to Tello after the app is launched, the extension will **not** be able to send commands to Tello.
 
 ## Build
 ```bash
