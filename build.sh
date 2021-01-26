@@ -1,6 +1,6 @@
 git clone --depth 1 https://github.com/LLK/scratch-vm.git
 git clone --depth 1 --branch scratch-desktop https://github.com/LLK/scratch-gui.git
-git clone --depth 1 https://github.com/LLK/scratch-desktop.git
+git clone --depth 1 --branch v3.10.4 https://github.com/LLK/scratch-desktop.git
 cd scratch-vm
 npm install
 npm link
