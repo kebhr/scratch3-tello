@@ -1,16 +1,25 @@
 const dgram = require('dgram');
 
+const telloAddress = '192.168.10.1';
+const serverPort = 8890;
+const clientPort = 8889;
+
 class TelloProcessor {
     initialize () {
         this.queue = []; // command queue
+        this.data = {};
 
         this.client = dgram.createSocket('udp4');
         this.server = dgram.createSocket('udp4');
 
         this.client.bind({
             address: '0.0.0.0',
-            port: 40001,
-            exclusive: true
+            port: clientPort
+        });
+
+        this.server.bind({
+            address: '0.0.0.0',
+            port: serverPort
         });
 
         this.send('command');
@@ -18,7 +27,6 @@ class TelloProcessor {
 
         this.client.on('message', (message, remote) => {
             const readableMessage = message.toString();
-            
             // Previous command executed
             if (readableMessage === 'error' || readableMessage === 'ok') {
                 this.executing = false;
@@ -37,13 +45,14 @@ class TelloProcessor {
             // message: <Buffer 70 69 74 63 68 ... >
             const readableMessage = message.toString();
             // console.log(readableMessage);
-            this.data = {};
             for (const e of readableMessage.slice(0, -1).split(';')) {
                 this.data[e.split(':')[0]] = e.split(':')[1];
             }
         });
 
-        this.server.bind(8890, '0.0.0.0');
+        this.server.send('battery?', 0, 'battery?'.length, clientPort, telloAddress, (err, bytes) => {
+            if (err) throw err;
+        });
     }
     
 
@@ -68,7 +77,7 @@ class TelloProcessor {
     send (cmd) {
         const msg = Buffer.from(cmd);
         this.executing = true;
-        this.client.send(msg, 0, msg.length, 8889, '192.168.10.1', (err, bytes) => {
+        this.client.send(msg, 0, msg.length, clientPort, telloAddress, (err, bytes) => {
             if (err) throw err;
         });
     }
