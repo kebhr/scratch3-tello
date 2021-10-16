@@ -21,7 +21,7 @@ You can download the binary [here](https://github.com/kebhr/scratch3-tello/relea
 - If you are having trouble connecting to Tello, close the app, restart Tello and start the app again.  
 - Connect to Tello before launching the app. If you connect to Tello after the app is launched, the extension will **not** be able to send commands to Tello.
 
-## Support languages
+## Supported languages
 - English
 - 日本語
 - にほんご
