@@ -22,122 +22,146 @@ const message = {
     takeoff: {
         'ja': '離陸する',
         'ja-Hira': 'りりくする',
-        'en': 'takeoff'
+        'en': 'takeoff',
+        'ru': 'взлёт'
     },
     land: {
         'ja': '着陸する',
         'ja-Hira': 'ちゃくりくする',
-        'en': 'land'
+        'en': 'land',
+        'ru': 'посадка'
     },
     up: {
         'ja': '上に [X]cm 上がる',
         'ja-Hira': 'うえに [X] センチあがる',
-        'en': 'up [X] cm'
+        'en': 'up [X] cm',
+        'ru': 'вверх [X] см'
     },
     down: {
         'ja': '下に [X]cm 下がる',
         'ja-Hira': 'したに [X] センチさがる',
-        'en': 'down [X] cm'
+        'en': 'down [X] cm',
+        'ru': 'вниз [X] см'
     },
     left: {
         'ja': '左に [X]cm 動く',
         'ja-Hira': 'ひだりに [X] センチうごく',
-        'en': 'move left [X] cm'
+        'en': 'move left [X] cm',
+        'ru': 'влево [X] см'
     },
     right: {
         'ja': '右に [X]cm 動く',
         'ja-Hira': 'みぎに [X] センチうごく',
-        'en': 'move right [X] cm'
+        'en': 'move right [X] cm',
+        'ru': 'вправо [X] см'
     },
     forward: {
         'ja': '前に [X]cm 進む',
         'ja-Hira': 'まえに [X] センチすすむ',
-        'en': 'move forward [X] cm'
+        'en': 'move forward [X] cm',
+        'ru': 'вперёд [X] см'
     },
     back: {
         'ja': '後ろに [X]cm 下がる',
         'ja-Hira': 'うしろに [X] センチさがる',
-        'en': 'move back [X] cm'
+        'en': 'move back [X] cm',
+        'ru': 'назад [X] см'
     },
     cw: {
         'ja': '[X] 度右に回る',
         'ja-Hira': '[X] どみぎにまわる',
-        'en': 'rotate [X] degrees right'
+        'en': 'rotate [X] degrees right',
+        'ru': 'повернуть на [X] градусов вправо'
     },
     ccw: {
         'ja': '[X] 度左に回る',
         'ja-Hira': '[X] どひだりにまわる',
-        'en': 'rotate [X] degrees left'
+        'en': 'rotate [X] degrees left',
+        'ru': 'повернуть на [X] градусов влево'
     },
     pitch: {
         'ja': 'ピッチ',
         'ja-Hira': 'ピッチ',
-        'en': 'pitch'
+        'en': 'pitch',
+        'ru': 'наклон'
     },
     roll: {
         'ja': 'ロール',
         'ja-Hira': 'ロール',
-        'en': 'roll'
+        'en': 'roll',
+        'ru': 'крен'
     },
     yaw: {
         'ja': 'ヨー',
         'ja-Hira': 'ヨー',
-        'en': 'yaw'
+        'en': 'yaw',
+        'ru': 'вращение вокруг оси Z'
     },
     vgx: {
         'ja': 'x方向の速度',
         'ja-Hira': 'xほうこうのはやさ',
-        'en': 'speed x'
+        'en': 'speed x',
+        'ru': 'скорость x'
     },
     vgy: {
         'ja': 'y方向の速度',
         'ja-Hira': 'yほうこうのはやさ',
-        'en': 'speed y'
+        'en': 'speed y',
+        'ru': 'скорость y'
     },
     vgz: {
         'ja': 'z方向の速度',
         'ja-Hira': 'zほうこうのはやさ',
-        'en': 'speed z'
+        'en': 'speed z',
+        'ru': 'скорость z'
     },
     tof: {
         'ja': '地面からの高度',
         'ja-Hira': 'じめんからのたかさ',
-        'en': 'height from ground'
+        'en': 'height from ground',
+        'ru': 'высота от земли'
     },
     height: {
         'ja': '離陸した場所からの高度',
         'ja-Hira': 'りりくしたばしょからのたかさ',
-        'en': 'height from takeoff point'
+        'en': 'height from takeoff point',
+        'ru': 'высота от точки взлёта'
     },
     bat: {
         'ja': 'バッテリー残量',
         'ja-Hira': 'バッテリーざんりょう',
-        'en': 'battery remaining'
+        'en': 'battery remaining',
+        'ru': 'заряд батареи'
     },
     baro: {
         'ja': '気圧計による高さ',
         'ja-Hira': 'きあつけいによるたかさ',
-        'en': 'height by barometer'
+        'en': 'height by barometer',
+        'ru': 'высота по барометру'
     },
     time: {
         'ja': '飛行時間',
         'ja-Hira': 'ひこうじかん',
-        'en': 'flying time'
+        'en': 'flying time',
+        'ru': 'время полёта'
     },
     agx: {
         'ja': 'x方向の加速度',
         'ja-Hira': 'xほうこうのかそくど',
-        'en': 'acceleration x'
+        'en': 'acceleration x',
+        'ru': 'ускорение x'
     },
     agy: {
         'ja': 'y方向の加速度',
         'ja-Hira': 'yほうこうのかそくど',
-        'en': 'acceleration y'
+        'en': 'acceleration y',
+        'ru': 'ускорение y'
     },
     agz: {
         'ja': 'z方向の加速度',
         'ja-Hira': 'zほうこうのかそくど',
-        'en': 'acceleration z'
+        'en': 'acceleration z',
+        'ru': 'ускорение z'
     }
 
 };
