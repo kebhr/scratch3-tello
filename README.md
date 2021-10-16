@@ -21,7 +21,15 @@ You can download the binary [here](https://github.com/kebhr/scratch3-tello/relea
 - If you are having trouble connecting to Tello, close the app, restart Tello and start the app again.  
 - Connect to Tello before launching the app. If you connect to Tello after the app is launched, the extension will **not** be able to send commands to Tello.
 
-## Build
+## Support languages
+- English
+- 日本語
+- にほんご
+- Ру́сский (Thanks to [@cirodil](https://github.com/cirodil))
+
+Feel free to create a pull request for adding more languages!
+
+## How to build
 ```bash
 $ mkdir scratch3-tello
 $ cd scratch3-tello
@@ -30,7 +38,7 @@ $ chmod +x build.sh
 $ ./build.sh
 ```
 
-## Run
+## How to run
 ```bash
 $ cd scratch-desktop
 $ npm run build-gui
