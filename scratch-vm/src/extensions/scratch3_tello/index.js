@@ -186,7 +186,7 @@ class Scratch3Tello {
      * @returns {object} metadata for this extension and its blocks.
      */
     getInfo () {
-        if (formatMessage.setup().locale === 'ja' || formatMessage.setup().locale === 'ja-Hira') {
+        if (formatMessage.setup().locale === 'ja' || formatMessage.setup().locale === 'ja-Hira' || formatMessage.setup().locale === 'ru') {
             this.locale = formatMessage.setup().locale;
         } else {
             this.locale = 'en';
