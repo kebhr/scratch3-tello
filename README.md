@@ -1,8 +1,7 @@
 # scratch3-tello
-Scratch 3.0 for Tello.
+Code Tello with Scratch 3.0.
 
 For more information such as how to download, how to build: [scratch3-tello.app](https://scratch3-tello.app/)  
-Currently I provide more information by English and Japanese only.
 
 ![image](https://user-images.githubusercontent.com/42484226/74595154-93dda080-5081-11ea-8ef0-59eec11274d3.png)
 
