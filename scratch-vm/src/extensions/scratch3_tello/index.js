@@ -1,8 +1,9 @@
 const ArgumentType = require('../../extension-support/argument-type');
 const BlockType = require('../../extension-support/block-type');
 const Cast = require('../../util/cast');
-const log = require('../../util/log');
 const formatMessage = require('format-message');
+
+const TelloProcessor = require('./telloProcessor');
 
 /**
  * Icon svg to be displayed at the left edge of each extension block, encoded as a data URI.
@@ -178,6 +179,10 @@ class Scratch3Tello {
          * @type {Runtime}
          */
         this.runtime = runtime;
+
+        this.telloProcessor = new TelloProcessor();
+        this.telloProcessor.initialize();
+
         this.state = {};
         this.getState();
     }
@@ -376,50 +381,49 @@ class Scratch3Tello {
 
     getState () {
         setInterval(() => {
-            telloProcessor.state().then(response => {
-                this.state = JSON.parse(response);
-            });
+            const state = this.telloProcessor.state();
+            this.state = state;
         }, 100);
     }
 
     takeoff () {
-        telloProcessor.send('takeoff');
+        this.telloProcessor.request('takeoff');
     }
 
     land () {
-        telloProcessor.send('land');
+        this.telloProcessor.request('land');
     }
 
     up (args) {
-        telloProcessor.send(`up ${Cast.toString(args.X)}`);
+        this.telloProcessor.request(`up ${Cast.toString(args.X)}`);
     }
 
     down (args) {
-        telloProcessor.send(`down ${Cast.toString(args.X)}`);
+        this.telloProcessor.request(`down ${Cast.toString(args.X)}`);
     }
 
     left (args) {
-        telloProcessor.send(`left ${Cast.toString(args.X)}`);
+        this.telloProcessor.request(`left ${Cast.toString(args.X)}`);
     }
 
     right (args) {
-        telloProcessor.send(`right ${Cast.toString(args.X)}`);
+        this.telloProcessor.request(`right ${Cast.toString(args.X)}`);
     }
 
     forward (args) {
-        telloProcessor.send(`forward ${Cast.toString(args.X)}`);
+        this.telloProcessor.request(`forward ${Cast.toString(args.X)}`);
     }
 
     back (args) {
-        telloProcessor.send(`back ${Cast.toString(args.X)}`);
+        this.telloProcessor.request(`back ${Cast.toString(args.X)}`);
     }
 
     cw (args) {
-        telloProcessor.send(`cw ${Cast.toString(args.X)}`);
+        this.telloProcessor.request(`cw ${Cast.toString(args.X)}`);
     }
 
     ccw (args) {
-        telloProcessor.send(`ccw ${Cast.toString(args.X)}`);
+        this.telloProcessor.request(`ccw ${Cast.toString(args.X)}`);
     }
 
     pitch () {

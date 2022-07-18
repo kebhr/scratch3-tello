@@ -1,5 +1,5 @@
 # scratch3-tello
-Code Tello with Scratch 3.0.
+Fly Tello with Scratch 3.0.
 
 For more information such as how to download, how to build: [scratch3-tello.app](https://scratch3-tello.app/)  
 
