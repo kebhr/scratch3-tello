@@ -1,19 +1,25 @@
-git clone --depth 1 https://github.com/LLK/scratch-vm.git
-git clone --depth 1 --branch scratch-desktop-v3.10.2 https://github.com/LLK/scratch-gui.git
-git clone --depth 1 --branch v3.10.4 https://github.com/LLK/scratch-desktop.git
+git clone --filter=blob:none https://github.com/LLK/scratch-vm.git -b 0.2.0-prerelease.20220222132735
+git clone --filter=blob:none https://github.com/LLK/scratch-gui.git -b scratch-desktop-v3.29.0
+git clone --filter=blob:none https://github.com/LLK/scratch-desktop.git -b v3.29.1
+
 cd scratch-vm
 npm install
 npm link
-cd ../scratch-gui
+cd ..
+
+cd scratch-gui
 npm install
 npm link scratch-vm
 npm link
-cd ../scratch-desktop
+cd ..
+
+cd scratch-desktop
 npm install
-npm link scratch-gui
-cd node_modules/scratch-gui
-npm link scratch-vm
-cd ../../../
+cd node_modules
+rm -rf scratch-gui
+ln -s ../../scratch-gui scratch-gui
+cd ../../
+
 git clone https://github.com/kebhr/scratch3-tello
 cp -r scratch3-tello/. ./
 rm -rf scratch3-tello/

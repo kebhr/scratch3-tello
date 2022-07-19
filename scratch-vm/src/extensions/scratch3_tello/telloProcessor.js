@@ -36,7 +36,6 @@ class TelloProcessor {
             // remote: { address: '192.168.10.1', family: 'IPv4', port: 8889, size: 127 }
             // message: <Buffer 70 69 74 63 68 ... >
             const readableMessage = message.toString();
-            // console.log(readableMessage);
             this.data = {};
             for (const e of readableMessage.slice(0, -1).split(';')) {
                 this.data[e.split(':')[0]] = e.split(':')[1];
@@ -74,4 +73,4 @@ class TelloProcessor {
     }
 }
 
-export default TelloProcessor;
+module.exports = TelloProcessor;

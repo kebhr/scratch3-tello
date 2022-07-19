@@ -49,7 +49,6 @@ import gdxforConnectionSmallIconURL from './gdxfor/gdxfor-small.svg';
 import telloIconURL from './tello/tello.png';
 import telloInsetIconURL from './tello/tello-small.png';
 
-
 export default [
     {
         name: (
