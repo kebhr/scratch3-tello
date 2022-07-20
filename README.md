@@ -1,11 +1,11 @@
-# scratch3-tello
-Fly Tello with Scratch 3.0.
-
-For more information such as how to download, how to build: [scratch3-tello.app](https://scratch3-tello.app/)  
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/42484226/180014410-6c3868e4-f8ee-44a8-9a87-b89490061e03.png" alt="scratch3-tello Let's fly Tello with Scratch 3.0!" />
+</div>
+<div align="center">
+  <a href="https://scratch3-tello.app/"><img src="https://user-images.githubusercontent.com/42484226/180016745-629f04e3-e7d5-40f3-bfd6-bf2f594ecdf3.png" alt="for more information: click this image" /></a>
+</div>
 
 ![image](https://user-images.githubusercontent.com/42484226/74595154-93dda080-5081-11ea-8ef0-59eec11274d3.png)
-
-This repository is under development.
 
 ## Release
 You can download the binary [here](https://github.com/kebhr/scratch3-tello/releases).  
