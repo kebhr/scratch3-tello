@@ -40,7 +40,6 @@ $ ./build.sh
 ## How to run
 ```bash
 $ cd scratch-desktop
-$ npm run build-gui
 $ npm start
 ```
 
