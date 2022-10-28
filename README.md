@@ -25,6 +25,7 @@ You can download the binary [here](https://github.com/kebhr/scratch3-tello/relea
 - 日本語
 - にほんご
 - Ру́сский (Thanks to [@cirodil](https://github.com/cirodil))
+- Français (Thanks to Ryan Perry)
 
 Feel free to create a pull request for adding more languages!
 

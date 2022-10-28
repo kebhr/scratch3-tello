@@ -24,145 +24,169 @@ const message = {
         'ja': '離陸する',
         'ja-Hira': 'りりくする',
         'en': 'takeoff',
-        'ru': 'взлёт'
+        'ru': 'взлёт',
+        'fr': 'décollage'
     },
     land: {
         'ja': '着陸する',
         'ja-Hira': 'ちゃくりくする',
         'en': 'land',
-        'ru': 'посадка'
+        'ru': 'посадка',
+        'fr': 'atterrissage'
     },
     up: {
         'ja': '上に [X]cm 上がる',
         'ja-Hira': 'うえに [X] センチあがる',
         'en': 'up [X] cm',
-        'ru': 'вверх [X] см'
+        'ru': 'вверх [X] см',
+        'fr': 'montée de [X] cm'
     },
     down: {
         'ja': '下に [X]cm 下がる',
         'ja-Hira': 'したに [X] センチさがる',
         'en': 'down [X] cm',
-        'ru': 'вниз [X] см'
+        'ru': 'вниз [X] см',
+        'fr': 'descente de [X] cm'
     },
     left: {
         'ja': '左に [X]cm 動く',
         'ja-Hira': 'ひだりに [X] センチうごく',
         'en': 'move left [X] cm',
-        'ru': 'влево [X] см'
+        'ru': 'влево [X] см',
+        'fr': 'voler à gauche [X] cm'
     },
     right: {
         'ja': '右に [X]cm 動く',
         'ja-Hira': 'みぎに [X] センチうごく',
         'en': 'move right [X] cm',
-        'ru': 'вправо [X] см'
+        'ru': 'вправо [X] см',
+        'fr': 'voler à droite [X] cm'
     },
     forward: {
         'ja': '前に [X]cm 進む',
         'ja-Hira': 'まえに [X] センチすすむ',
         'en': 'move forward [X] cm',
-        'ru': 'вперёд [X] см'
+        'ru': 'вперёд [X] см',
+        'fr': 'voler vers l\'avant [X] cm'
     },
     back: {
         'ja': '後ろに [X]cm 下がる',
         'ja-Hira': 'うしろに [X] センチさがる',
         'en': 'move back [X] cm',
-        'ru': 'назад [X] см'
+        'ru': 'назад [X] см',
+        'fr': 'voler vers l\'arrière [X] cm'
     },
     cw: {
         'ja': '[X] 度右に回る',
         'ja-Hira': '[X] どみぎにまわる',
         'en': 'rotate [X] degrees right',
-        'ru': 'повернуть на [X] градусов вправо'
+        'ru': 'повернуть на [X] градусов вправо',
+        'fr': 'tourner de [X] degrés vers la droite'
     },
     ccw: {
         'ja': '[X] 度左に回る',
         'ja-Hira': '[X] どひだりにまわる',
         'en': 'rotate [X] degrees left',
-        'ru': 'повернуть на [X] градусов влево'
+        'ru': 'повернуть на [X] градусов влево',
+        'fr': 'tourner de [X] degrés vers la gauche'
     },
     pitch: {
         'ja': 'ピッチ',
         'ja-Hira': 'ピッチ',
         'en': 'pitch',
-        'ru': 'наклон'
+        'ru': 'наклон',
+        'fr': 'tangage'
     },
     roll: {
         'ja': 'ロール',
         'ja-Hira': 'ロール',
         'en': 'roll',
-        'ru': 'крен'
+        'ru': 'крен',
+        'fr': 'roulis'
     },
     yaw: {
         'ja': 'ヨー',
         'ja-Hira': 'ヨー',
         'en': 'yaw',
-        'ru': 'вращение вокруг оси Z'
+        'ru': 'вращение вокруг оси Z',
+        'fr': 'lacet'
     },
     vgx: {
         'ja': 'x方向の速度',
         'ja-Hira': 'xほうこうのはやさ',
         'en': 'speed x',
-        'ru': 'скорость x'
+        'ru': 'скорость x',
+        'fr': 'vitesse sur l\'axe X'
     },
     vgy: {
         'ja': 'y方向の速度',
         'ja-Hira': 'yほうこうのはやさ',
         'en': 'speed y',
-        'ru': 'скорость y'
+        'ru': 'скорость y',
+        'fr': 'vitesse sur l\'axe Y'
     },
     vgz: {
         'ja': 'z方向の速度',
         'ja-Hira': 'zほうこうのはやさ',
         'en': 'speed z',
-        'ru': 'скорость z'
+        'ru': 'скорость z',
+        'fr': 'vitesse sur l\'axe Z'
     },
     tof: {
         'ja': '地面からの高度',
         'ja-Hira': 'じめんからのたかさ',
         'en': 'height from ground',
-        'ru': 'высота от земли'
+        'ru': 'высота от земли',
+        'fr': 'hauteur du sol'
     },
     height: {
         'ja': '離陸した場所からの高度',
         'ja-Hira': 'りりくしたばしょからのたかさ',
         'en': 'height from takeoff point',
-        'ru': 'высота от точки взлёта'
+        'ru': 'высота от точки взлёта',
+        'fr': 'hauteur du point de décollage'
     },
     bat: {
         'ja': 'バッテリー残量',
         'ja-Hira': 'バッテリーざんりょう',
         'en': 'battery remaining',
-        'ru': 'заряд батареи'
+        'ru': 'заряд батареи',
+        'fr': 'niveau de la batterie'
     },
     baro: {
         'ja': '気圧計による高さ',
         'ja-Hira': 'きあつけいによるたかさ',
         'en': 'height by barometer',
-        'ru': 'высота по барометру'
+        'ru': 'высота по барометру',
+        'fr': 'altitude (baromètre)'
     },
     time: {
         'ja': '飛行時間',
         'ja-Hira': 'ひこうじかん',
         'en': 'flying time',
-        'ru': 'время полёта'
+        'ru': 'время полёта',
+        'fr': 'durée du vol'
     },
     agx: {
         'ja': 'x方向の加速度',
         'ja-Hira': 'xほうこうのかそくど',
         'en': 'acceleration x',
-        'ru': 'ускорение x'
+        'ru': 'ускорение x',
+        'fr': 'accélération sur l\'axe X'
     },
     agy: {
         'ja': 'y方向の加速度',
         'ja-Hira': 'yほうこうのかそくど',
         'en': 'acceleration y',
-        'ru': 'ускорение y'
+        'ru': 'ускорение y',
+        'fr': 'accélération sur l\'axe Y'
     },
     agz: {
         'ja': 'z方向の加速度',
         'ja-Hira': 'zほうこうのかそくど',
         'en': 'acceleration z',
-        'ru': 'ускорение z'
+        'ru': 'ускорение z',
+        'fr': 'accélération sur l\'axe Z'
     }
 
 };
@@ -191,7 +215,7 @@ class Scratch3Tello {
      * @returns {object} metadata for this extension and its blocks.
      */
     getInfo () {
-        if (formatMessage.setup().locale === 'ja' || formatMessage.setup().locale === 'ja-Hira' || formatMessage.setup().locale === 'ru') {
+        if (formatMessage.setup().locale === 'ja' || formatMessage.setup().locale === 'ja-Hira' || formatMessage.setup().locale === 'ru' || formatMessage.setup().locale === 'fr') {
             this.locale = formatMessage.setup().locale;
         } else {
             this.locale = 'en';
