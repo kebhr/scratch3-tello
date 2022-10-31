@@ -90,6 +90,54 @@ const message = {
         'ru': 'повернуть на [X] градусов влево',
         'fr': 'tourner de [X] degrés vers la gauche'
     },
+    flip: {
+        'ja': '[DIRECTION]に宙返りする',
+        'ja-Hira': '[DIRECTION]にちゅうがえりする',
+        'en': 'flip in [DIRECTION]',
+        'fr': 'flip vers [DIRECTION]'
+    },
+    go: {
+        'ja': 'x:[X] y:[Y] z:[Z] に [SPEED]cm/s で飛ぶ',
+        'ja-Hira': 'x:[X] y:[Y] z:[Z] に 1びょうで [SPEED] センチのはやさでとぶ',
+        'en': 'fly to x:[X] y:[Y] z:[Z] in [SPEED]cm/s',
+        'fr': 'voler à x:[X] y:[Y] z:[Z] à [SPEED]cm/s'
+    },
+    curve: {
+        'ja': 'x:[X1] y:[Y1] z:[Z1] から x:[X2] y:[Y2] z:[Z2] に [SPEED]cm/s でカーブしながら飛ぶ',
+        'ja-hira': 'x:[X2] y:[Y2] z:[Z2] から x:[X2] y:[Y2] z:[Z2] に 1びょうで [SPEED] センチのはやさでカーブしながらとぶ',
+        'en': 'fly in curve from x:[X1] y:[Y1] z:[Z1] to x:[X2] y:[Y2] z:[Z2] in [SPEED]cm/s',
+        'fr': 'voler en courbe de x:[X1] y:[Y1] z:[Z1] à x:[X2] y:[Y2] z:[Z2] à [SPEED]cm/s'
+    },
+    enable_mission_pad: {
+        'ja': 'ミッションパッドを使う',
+        'ja-Hira': 'ミッションパッドをつかう',
+        'en': 'enable Mission Pad',
+        'fr': 'activer le "Mission Pad"'
+    },
+    edu_go: {
+        'ja': '[MID]を検出していたら、ミッションパッドを基準に x:[X] y:[Y] z:[Z] に [SPEED]cm/s で飛ぶ',
+        'ja-Hira': '[MID]がみつかっていたら、ミッションパッドからみて x:[X] y:[Y] z:[Z] に 1びょうで [SPEED] センチのはやさでとぶ',
+        'en': 'when [MID] detected, fly to x:[X] y:[Y] z:[Z] based on the Mission Pad at [SPEED]cm/s',
+        'fr': 'détecter [MID], ensuite voler à x:[X] y:[Y] z:[Z] à partir du Mission Pad à [SPEED]cm/s'
+    },
+    edu_curve: {
+        'ja': '[MID]を検出していたら、ミッションパッドを基準に x:[X1] y:[Y1] z:[Z1] から x:[X2] y:[Y2] z:[Z2] に [SPEED]cm/s でカーブしながら飛ぶ',
+        'ja-hira': '[MID]がみつかっていたら、ミッションパッドからみて x:[X2] y:[Y2] z:[Z2] から x:[X2] y:[Y2] z:[Z2] に 1びょうで [SPEED] センチのはやさでカーブしながらとぶ',
+        'en': 'when [MID] detected, fly in curve from x:[X1] y:[Y1] z:[Z1] to x:[X2] y:[Y2] z:[Z2] based on the Mission Pad at [SPEED]cm/s',
+        'fr': 'détecter [MID], ensuite voler en courbe de x:[X] y:[Y] z:[Z] à x:[X] y:[Y] z:[Z] à partir du Mission Pad à [SPEED] cm/s'
+    },
+    edu_jump: {
+        'ja': '[MID1]と[MID2]を検出したら、1つ目のミッションパッドを基準に x:[X] y:[Y] z:[Z] に飛んだあと、2つ目のミッションパッドの上まで[SPEED]cm/sで飛び[YAW]度に向く',
+        'ja-hira': '[MID1]と[MID2]がみつかったら、1つめのミッションパッドからみて x:[X] y:[Y] z:[Z] にとんだあと2つめのミッションパッドのうえまで 1びょうで [SPEED] センチのはやさでとび、[YAW]どにむく',
+        'en': 'when [MID1] [MID2] detected, fly to x:[X] y:[Y] z:[Z] based on first mission pad then fly on second mission pad at [SPEED] cm/s and rotate [YAW] degrees',
+        'fr': 'détecter [MID1] et [MID2], ensuite voler à x:[X] y:[Y] z:[Z] à partir du premier Mission Pad, faire une rotation de [YAW] degrés, et voler au deuxième Mission Pad à [SPEED] cm/s'
+    },
+    clearQueue: {
+        'ja': '実行待ちのコマンドをクリアする',
+        'ja-Hira': 'うごくのをまっているコマンドをなくす',
+        'en': 'clear command queue',
+        'fr': 'effacer la séquence de commandes'
+    },
     pitch: {
         'ja': 'ピッチ',
         'ja-Hira': 'ピッチ',
@@ -188,7 +236,6 @@ const message = {
         'ru': 'ускорение z',
         'fr': 'accélération sur l\'axe Z'
     }
-
 };
 
 /**
@@ -211,6 +258,11 @@ class Scratch3Tello {
         this.getState();
     }
 
+
+    _getText (key) {
+        return message[key][this.locale] || message[key]['en'];
+    }
+
     /**
      * @returns {object} metadata for this extension and its blocks.
      */
@@ -230,18 +282,18 @@ class Scratch3Tello {
             blocks: [
                 {
                     opcode: 'takeoff',
-                    text: message.takeoff[this.locale],
+                    text: this._getText('takeoff'),
                     blockType: BlockType.COMMAND
                 },
                 {
                     opcode: 'land',
-                    text: message.land[this.locale],
+                    text: this._getText('land'),
                     blockType: BlockType.COMMAND
                 },
                 '---',
                 {
                     opcode: 'up',
-                    text: message.up[this.locale],
+                    text: this._getText('up'),
                     blockType: BlockType.COMMAND,
                     arguments: {
                         X: {
@@ -252,7 +304,7 @@ class Scratch3Tello {
                 },
                 {
                     opcode: 'down',
-                    text: message.down[this.locale],
+                    text: this._getText('down'),
                     blockType: BlockType.COMMAND,
                     arguments: {
                         X: {
@@ -263,7 +315,7 @@ class Scratch3Tello {
                 },
                 {
                     opcode: 'left',
-                    text: message.left[this.locale],
+                    text: this._getText('left'),
                     blockType: BlockType.COMMAND,
                     arguments: {
                         X: {
@@ -274,7 +326,7 @@ class Scratch3Tello {
                 },
                 {
                     opcode: 'right',
-                    text: message.right[this.locale],
+                    text: this._getText('right'),
                     blockType: BlockType.COMMAND,
                     arguments: {
                         X: {
@@ -285,7 +337,7 @@ class Scratch3Tello {
                 },
                 {
                     opcode: 'forward',
-                    text: message.forward[this.locale],
+                    text: this._getText('forward'),
                     blockType: BlockType.COMMAND,
                     arguments: {
                         X: {
@@ -296,7 +348,7 @@ class Scratch3Tello {
                 },
                 {
                     opcode: 'back',
-                    text: message.back[this.locale],
+                    text: this._getText('back'),
                     blockType: BlockType.COMMAND,
                     arguments: {
                         X: {
@@ -307,7 +359,7 @@ class Scratch3Tello {
                 },
                 {
                     opcode: 'cw',
-                    text: message.cw[this.locale],
+                    text: this._getText('cw'),
                     blockType: BlockType.COMMAND,
                     arguments: {
                         X: {
@@ -318,7 +370,7 @@ class Scratch3Tello {
                 },
                 {
                     opcode: 'ccw',
-                    text: message.ccw[this.locale],
+                    text: this._getText('ccw'),
                     blockType: BlockType.COMMAND,
                     arguments: {
                         X: {
@@ -327,79 +379,381 @@ class Scratch3Tello {
                         }
                     }
                 },
+                {
+                    opcode: 'flip',
+                    text: this._getText('flip'),
+                    blockType: BlockType.COMMAND,
+                    arguments: {
+                        DIRECTION: {
+                            type: ArgumentType.STRING,
+                            defaultValue: 'f',
+                            menu: 'DIRECTION'
+                        }
+                    }
+                },
+                '---',
+                {
+                    opcode: 'go',
+                    text: this._getText('go'),
+                    blockType: BlockType.COMMAND,
+                    arguments: {
+                        X: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        Y: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        Z: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        SPEED: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 10
+                        },
+                    }
+                },
+                {
+                    opcode: 'curve',
+                    text: this._getText('curve'),
+                    blockType: BlockType.COMMAND,
+                    arguments: {
+                        X1: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        Y1: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        Z1: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        X2: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        Y2: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        Z2: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        SPEED: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 10
+                        }
+                    }
+                },
+                '---',
+                {
+                    opcode: 'enable_mission_pad',
+                    text: this._getText('enable_mission_pad'),
+                    blockType: BlockType.COMMAND,
+                },
+                {
+                    opcode: 'edu_go',
+                    text: '(EDU) ' + this._getText('edu_go'),
+                    blockType: BlockType.COMMAND,
+                    arguments: {
+                        X: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        Y: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        Z: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        SPEED: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 10
+                        },
+                        MID: {
+                            type: ArgumentType.STRING,
+                            defaultValue: 'm1',
+                            menu: 'MID'
+                        }
+                    }
+                },
+                {
+                    opcode: 'edu_curve',
+                    text: '(EDU) ' + this._getText('edu_curve'),
+                    blockType: BlockType.COMMAND,
+                    arguments: {
+                        X1: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        Y1: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        Z1: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        X2: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        Y2: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        Z2: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        SPEED: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 10
+                        },
+                        MID: {
+                            type: ArgumentType.STRING,
+                            defaultValue: 'm1',
+                            menu: 'MID'
+                        }
+                    }
+                },
+                {
+                    opcode: 'edu_jump',
+                    text: '(EDU) ' + this._getText('edu_jump'),
+                    blockType: BlockType.COMMAND,
+                    arguments: {
+                        X: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        Y: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        Z: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        SPEED: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 10
+                        },
+                        YAW: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        MID1: {
+                            type: ArgumentType.STRING,
+                            defaultValue: 'm1',
+                            menu: 'MID'
+                        },
+                        MID2: {
+                            type: ArgumentType.STRING,
+                            defaultValue: 'm1',
+                            menu: 'MID'
+                        }
+                    }
+                },
+                '---',
+                {
+                    opcode: 'clearQueue',
+                    text: this._getText('clearQueue'),
+                    blockType: BlockType.COMMAND
+                },
                 '---',
                 {
                     opcode: 'pitch',
-                    text: message.pitch[this.locale],
+                    text: this._getText('pitch'),
                     blockType: BlockType.REPORTER
                 },
                 {
                     opcode: 'roll',
-                    text: message.roll[this.locale],
+                    text: this._getText('roll'),
                     blockType: BlockType.REPORTER
                 },
                 {
                     opcode: 'yaw',
-                    text: message.yaw[this.locale],
+                    text: this._getText('yaw'),
                     blockType: BlockType.REPORTER
                 },
                 {
                     opcode: 'vgx',
-                    text: message.vgx[this.locale],
+                    text: this._getText('vgx'),
                     blockType: BlockType.REPORTER
                 },
                 {
                     opcode: 'vgy',
-                    text: message.vgy[this.locale],
+                    text: this._getText('vgy'),
                     blockType: BlockType.REPORTER
                 },
                 {
                     opcode: 'vgz',
-                    text: message.vgz[this.locale],
+                    text: this._getText('vgz'),
                     blockType: BlockType.REPORTER
                 },
                 {
                     opcode: 'tof',
-                    text: message.tof[this.locale],
+                    text: this._getText('tof'),
                     blockType: BlockType.REPORTER
                 },
                 {
                     opcode: 'height',
-                    text: message.height[this.locale],
+                    text: this._getText('height'),
                     blockType: BlockType.REPORTER
                 },
                 {
                     opcode: 'bat',
-                    text: message.bat[this.locale],
+                    text: this._getText('bat'),
                     blockType: BlockType.REPORTER
                 },
                 {
                     opcode: 'baro',
-                    text: message.baro[this.locale],
+                    text: this._getText('baro'),
                     blockType: BlockType.REPORTER
                 },
                 {
                     opcode: 'time',
-                    text: message.time[this.locale],
+                    text: this._getText('time'),
                     blockType: BlockType.REPORTER
                 },
                 {
                     opcode: 'agx',
-                    text: message.agx[this.locale],
+                    text: this._getText('agx'),
                     blockType: BlockType.REPORTER
                 },
                 {
                     opcode: 'agy',
-                    text: message.agy[this.locale],
+                    text: this._getText('agy'),
                     blockType: BlockType.REPORTER
                 },
                 {
                     opcode: 'agz',
-                    text: message.agz[this.locale],
+                    text: this._getText('agz'),
                     blockType: BlockType.REPORTER
                 }
             ],
             menus: {
+                DIRECTION: {
+                    acceptReporters: true,
+                    items: [
+                        {
+                            text: (() => {
+                                const msg = {
+                                    'ja': '前',
+                                    'ja-Hira': 'まえ',
+                                    'en': 'forward',
+                                    'fr': 'avant'
+                                };
+                                return msg[this.locale] || msg['en'];
+                            })(),
+                            value: 'f'
+                        },
+                        {
+                            text: (() => {
+                                const msg = {
+                                    'ja': '後ろ',
+                                    'ja-Hira': 'うしろ',
+                                    'en': 'back',
+                                    'fr': 'arrière'
+                                };
+                                return msg[this.locale] || msg['en'];
+                            })(),
+                            value: 'b'
+                        },
+                        {
+                            text: (() => {
+                                const msg = {
+                                    'ja': '左',
+                                    'ja-Hira': 'ひだり',
+                                    'en': 'left',
+                                    'fr': 'gauche'
+                                };
+                                return msg[this.locale] || msg['en'];
+                            })(),
+                            value: 'l'
+                        },
+                        {
+                            text: (() => {
+                                const msg = {
+                                    'ja': '右',
+                                    'ja-Hira': 'みぎ',
+                                    'en': 'right',
+                                    'fr': 'droite'
+                                };
+                                return msg[this.locale] || msg['en'];
+                            })(),
+                            value: 'r'
+                        }
+                    ]
+                },
+                MID: {
+                    acceptReporters: true,
+                    items: [
+                        {
+                            text: 'm1',
+                            value: 'm1'
+                        },
+                        {
+                            text: 'm2',
+                            value: 'm2'
+                        },
+                        {
+                            text: 'm3',
+                            value: 'm3'
+                        },
+                        {
+                            text: 'm4',
+                            value: 'm4'
+                        },
+                        {
+                            text: 'm5',
+                            value: 'm5'
+                        },
+                        {
+                            text: 'm6',
+                            value: 'm6'
+                        },
+                        {
+                            text: 'm7',
+                            value: 'm7'
+                        },
+                        {
+                            text: 'm8',
+                            value: 'm8'
+                        },
+                        {
+                            text: (() => {
+                                const msg = {
+                                    'ja': 'ランダム',
+                                    'ja-Hira': 'ランダム',
+                                    'en': 'random',
+                                    'fr': 'aléatoire'
+                                };
+                                return msg[this.locale] || msg['en'];
+                            })(),
+                            value: 'm-1'
+                        },
+                        {
+                            text: (() => {
+                                const msg = {
+                                    'ja': '最も近い',
+                                    'ja-Hira': 'もっともちかい',
+                                    'en': 'nearest',
+                                    'fr': 'le plus proche'
+                                };
+                                return msg[this.locale] || msg['en'];
+                            })(),
+                            value: 'm-2'
+                        }
+                    ]
+                }
             }
         };
     }
@@ -449,6 +803,39 @@ class Scratch3Tello {
 
     ccw (args) {
         this.telloProcessor.request(`ccw ${Cast.toString(args.X)}`);
+    }
+
+    flip (args) {
+        this.telloProcessor.request(`flip ${args.DIRECTION}`);
+    }
+
+    go (args) {
+        this.telloProcessor.request(`go ${Cast.toString(args.X)} ${Cast.toString(args.Y)} ${Cast.toString(args.Z)} ${Cast.toString(args.SPEED)}`);
+    }
+
+    curve (args) {
+        this.telloProcessor.request(`curve ${Cast.toString(args.X1)} ${Cast.toString(args.Y1)} ${Cast.toString(args.Z1)} ${Cast.toString(args.X2)} ${Cast.toString(args.Y2)} ${Cast.toString(args.Z2)} ${Cast.toString(args.SPEED)}`);
+    }
+
+    enable_mission_pad () {
+        this.telloProcessor.request(`mon`);
+        this.telloProcessor.request(`mdirection 2`);
+    }
+
+    edu_go (args) {
+        this.telloProcessor.request(`go ${Cast.toString(args.X)} ${Cast.toString(args.Y)} ${Cast.toString(args.Z)} ${Cast.toString(args.SPEED)} ${args.MID}`);
+    }
+
+    edu_curve (args) {
+        this.telloProcessor.request(`curve ${Cast.toString(args.X1)} ${Cast.toString(args.Y1)} ${Cast.toString(args.Z1)} ${Cast.toString(args.X2)} ${Cast.toString(args.Y2)} ${Cast.toString(args.Z2)} ${Cast.toString(args.SPEED)} ${args.MID}`);
+    }
+
+    edu_jump (args) {
+        this.telloProcessor.request(`jump ${Cast.toString(args.X)} ${Cast.toString(args.Y)} ${Cast.toString(args.Z)} ${Cast.toString(args.SPEED)} ${Cast.toString(args.YAW)} ${args.MID1} ${args.MID2}`);
+    }
+
+    clearQueue () {
+        this.telloProcessor.resetQueue();
     }
 
     pitch () {

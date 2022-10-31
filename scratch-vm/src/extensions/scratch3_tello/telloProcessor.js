@@ -78,8 +78,8 @@ class TelloProcessor {
 
     send (cmd) {
         const msg = Buffer.from(cmd);
-        // While grounding, `command` and `takeoff` can only execute
-        if (!this.flying && cmd !== 'command' && cmd !== 'takeoff') {
+        // While grounding, `command`, `mon`, `mdirection 2` and `takeoff` are only executable
+        if (!this.flying && cmd !== 'command' && cmd !== 'mon' && cmd !== 'mdirection 2' && cmd !== 'takeoff') {
             this.queue.shift();
             return;
         }
@@ -88,6 +88,12 @@ class TelloProcessor {
         this.client.send(msg, 0, msg.length, 8889, '192.168.10.1', (err, bytes) => {
             if (err) throw err;
         });
+    }
+
+    resetQueue () {
+        this.queue = [];
+        this.flying = false;
+        this.executing = false;
     }
 }
 
