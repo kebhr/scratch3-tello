@@ -5,26 +5,32 @@
   <a href="https://scratch3-tello.app/"><img src="https://user-images.githubusercontent.com/42484226/180016745-629f04e3-e7d5-40f3-bfd6-bf2f594ecdf3.png" alt="for more information: click this image" /></a>
 </div>
 
-![image](https://user-images.githubusercontent.com/42484226/74595154-93dda080-5081-11ea-8ef0-59eec11274d3.png)
+<img width="1238" alt="screenshot of scratch3-tello" src="https://user-images.githubusercontent.com/42484226/199463133-0e678fb1-f309-4dd6-936f-633d8105fd0d.png">
+
+![GitHub all releases](https://img.shields.io/github/downloads/kebhr/scratch3-tello/total?style=for-the-badge)
 
 ## Release
-You can download the binary [here](https://github.com/kebhr/scratch3-tello/releases).  
+You can download the binary from [here](https://github.com/kebhr/scratch3-tello/releases).  
+
+I am seeking sponsors on [Patreon](https://www.patreon.com/scratch3_tello) to continue the development of Scratch3-Tello.
 
 ### Instruction
 1. Download the binary.
-2. Connect to Tello wifi.
+2. Connect to Tello's wifi.
 3. Start the app.
 4. Activate Tello extension.
 
 **NOTE:**
 - If you are having trouble connecting to Tello, close the app, restart Tello and start the app again.  
 - Connect to Tello before launching the app. If you connect to Tello after the app is launched, the extension will **not** be able to send commands to Tello.
+- If the drone does not take off after sending the `takeoff` command, use the `clear command queue` block.
 
 ## Supported languages
 - English
 - 日本語
 - にほんご
 - Ру́сский (Thanks to [@cirodil](https://github.com/cirodil))
+- Français (Thanks to Ryan Perry)
 
 Feel free to create a pull request for adding more languages!
 

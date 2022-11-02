@@ -13,20 +13,32 @@ class TelloProcessor {
             exclusive: true
         });
 
+        this.flying = false;
         this.send('command');
-        this.executing = true;
 
         this.client.on('message', (message, remote) => {
             const readableMessage = message.toString();
             
             // Previous command executed
-            if (readableMessage === 'error' || readableMessage === 'ok') {
+            if (readableMessage === 'ok') {
                 this.executing = false;
+
+                if (this.executingCommand === 'takeoff') this.flying = true;
+                if (this.executingCommand === 'land') this.flying = false;
 
                 // Dequeue
                 this.queue.shift();
 
-                // Send the next element
+                // Send next element
+                this.inquire();
+            } else if (readableMessage.includes('error')) {
+                this.executing = false;
+                this.flying = false;
+
+                // Dequeue
+                this.queue.shift();
+
+                // Send next element
                 this.inquire();
             }
         });
@@ -66,10 +78,22 @@ class TelloProcessor {
 
     send (cmd) {
         const msg = Buffer.from(cmd);
+        // While grounding, `command`, `mon`, `mdirection 2` and `takeoff` are only executable
+        if (!this.flying && cmd !== 'command' && cmd !== 'mon' && cmd !== 'mdirection 2' && cmd !== 'takeoff') {
+            this.queue.shift();
+            return;
+        }
         this.executing = true;
+        this.executingCommand = cmd;
         this.client.send(msg, 0, msg.length, 8889, '192.168.10.1', (err, bytes) => {
             if (err) throw err;
         });
+    }
+
+    resetQueue () {
+        this.queue = [];
+        this.flying = false;
+        this.executing = false;
     }
 }
 
