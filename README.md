@@ -5,7 +5,7 @@
   <a href="https://scratch3-tello.app/"><img src="https://user-images.githubusercontent.com/42484226/180016745-629f04e3-e7d5-40f3-bfd6-bf2f594ecdf3.png" alt="for more information: click this image" /></a>
 </div>
 
-![image](https://user-images.githubusercontent.com/42484226/74595154-93dda080-5081-11ea-8ef0-59eec11274d3.png)
+<img width="1238" alt="screenshot of scratch3-tello" src="https://user-images.githubusercontent.com/42484226/199463133-0e678fb1-f309-4dd6-936f-633d8105fd0d.png">
 
 ![GitHub all releases](https://img.shields.io/github/downloads/kebhr/scratch3-tello/total?style=for-the-badge)
 
