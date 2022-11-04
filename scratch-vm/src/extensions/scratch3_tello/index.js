@@ -25,216 +25,248 @@ const message = {
         'ja-Hira': 'りりくする',
         'en': 'takeoff',
         'ru': 'взлёт',
-        'fr': 'décollage'
+        'fr': 'décollage',
+        'de': 'abheben'
     },
     land: {
         'ja': '着陸する',
         'ja-Hira': 'ちゃくりくする',
         'en': 'land',
         'ru': 'посадка',
-        'fr': 'atterrissage'
+        'fr': 'atterrissage',
+        'de': 'landen'
     },
     up: {
         'ja': '上に [X]cm 上がる',
         'ja-Hira': 'うえに [X] センチあがる',
         'en': 'up [X] cm',
         'ru': 'вверх [X] см',
-        'fr': 'montée de [X] cm'
+        'fr': 'montée de [X] cm',
+        'de': '[X] cm höher'
     },
     down: {
         'ja': '下に [X]cm 下がる',
         'ja-Hira': 'したに [X] センチさがる',
         'en': 'down [X] cm',
         'ru': 'вниз [X] см',
-        'fr': 'descente de [X] cm'
+        'fr': 'descente de [X] cm',
+        'de': '[X] cm tiefer'
     },
     left: {
         'ja': '左に [X]cm 動く',
         'ja-Hira': 'ひだりに [X] センチうごく',
         'en': 'move left [X] cm',
         'ru': 'влево [X] см',
-        'fr': 'voler à gauche [X] cm'
+        'fr': 'voler à gauche [X] cm',
+        'de': '[X] cm nach links'
     },
     right: {
         'ja': '右に [X]cm 動く',
         'ja-Hira': 'みぎに [X] センチうごく',
         'en': 'move right [X] cm',
         'ru': 'вправо [X] см',
-        'fr': 'voler à droite [X] cm'
+        'fr': 'voler à droite [X] cm',
+        'de': '[X] cm nach rechts'
     },
     forward: {
         'ja': '前に [X]cm 進む',
         'ja-Hira': 'まえに [X] センチすすむ',
         'en': 'move forward [X] cm',
         'ru': 'вперёд [X] см',
-        'fr': 'voler vers l\'avant [X] cm'
+        'fr': 'voler vers l\'avant [X] cm',
+        'de': '[X] cm nach vorne'
     },
     back: {
         'ja': '後ろに [X]cm 下がる',
         'ja-Hira': 'うしろに [X] センチさがる',
         'en': 'move back [X] cm',
         'ru': 'назад [X] см',
-        'fr': 'voler vers l\'arrière [X] cm'
+        'fr': 'voler vers l\'arrière [X] cm',
+        'de': '[X] cm nach hinten'
     },
     cw: {
         'ja': '[X] 度右に回る',
         'ja-Hira': '[X] どみぎにまわる',
         'en': 'rotate [X] degrees right',
         'ru': 'повернуть на [X] градусов вправо',
-        'fr': 'tourner de [X] degrés vers la droite'
+        'fr': 'tourner de [X] degrés vers la droite',
+        'de': 'drehe [X] Grad nach rechts'
     },
     ccw: {
         'ja': '[X] 度左に回る',
         'ja-Hira': '[X] どひだりにまわる',
         'en': 'rotate [X] degrees left',
         'ru': 'повернуть на [X] градусов влево',
-        'fr': 'tourner de [X] degrés vers la gauche'
+        'fr': 'tourner de [X] degrés vers la gauche',
+        'de': 'drehe [X] Grad nach links'
     },
     flip: {
         'ja': '[DIRECTION]に宙返りする',
         'ja-Hira': '[DIRECTION]にちゅうがえりする',
         'en': 'flip in [DIRECTION]',
-        'fr': 'flip vers [DIRECTION]'
+        'fr': 'flip vers [DIRECTION]',
+        'de': 'Flip nach [DIRECTION]'
     },
     go: {
         'ja': 'x:[X] y:[Y] z:[Z] に [SPEED]cm/s で飛ぶ',
         'ja-Hira': 'x:[X] y:[Y] z:[Z] に 1びょうで [SPEED] センチのはやさでとぶ',
         'en': 'fly to x:[X] y:[Y] z:[Z] in [SPEED]cm/s',
-        'fr': 'voler à x:[X] y:[Y] z:[Z] à [SPEED]cm/s'
+        'fr': 'voler à x:[X] y:[Y] z:[Z] à [SPEED]cm/s',
+        'de': 'fliege zu x:[X] y:[Y] z:[Z] mit [SPEED]cm/s'
     },
     curve: {
         'ja': 'x:[X1] y:[Y1] z:[Z1] から x:[X2] y:[Y2] z:[Z2] に [SPEED]cm/s でカーブしながら飛ぶ',
         'ja-hira': 'x:[X2] y:[Y2] z:[Z2] から x:[X2] y:[Y2] z:[Z2] に 1びょうで [SPEED] センチのはやさでカーブしながらとぶ',
         'en': 'fly in curve from x:[X1] y:[Y1] z:[Z1] to x:[X2] y:[Y2] z:[Z2] in [SPEED]cm/s',
-        'fr': 'voler en courbe de x:[X1] y:[Y1] z:[Z1] à x:[X2] y:[Y2] z:[Z2] à [SPEED]cm/s'
+        'fr': 'voler en courbe de x:[X1] y:[Y1] z:[Z1] à x:[X2] y:[Y2] z:[Z2] à [SPEED]cm/s',
+        'de': 'fliege in einer Kurve von x:[X1] y:[Y1] z:[Z1] nach x:[X2] y:[Y2] z:[Z2] mit [SPEED]cm/s'
     },
     enable_mission_pad: {
         'ja': 'ミッションパッドを使う',
         'ja-Hira': 'ミッションパッドをつかう',
         'en': 'enable Mission Pad',
-        'fr': 'activer le "Mission Pad"'
+        'fr': 'activer le "Mission Pad"',
+        'de': 'aktiviere das Mission Pad'
     },
     edu_go: {
         'ja': '[MID]を検出していたら、ミッションパッドを基準に x:[X] y:[Y] z:[Z] に [SPEED]cm/s で飛ぶ',
         'ja-Hira': '[MID]がみつかっていたら、ミッションパッドからみて x:[X] y:[Y] z:[Z] に 1びょうで [SPEED] センチのはやさでとぶ',
         'en': 'when [MID] detected, fly to x:[X] y:[Y] z:[Z] based on the Mission Pad at [SPEED]cm/s',
-        'fr': 'détecter [MID], ensuite voler à x:[X] y:[Y] z:[Z] à partir du Mission Pad à [SPEED]cm/s'
+        'fr': 'détecter [MID], ensuite voler à x:[X] y:[Y] z:[Z] à partir du Mission Pad à [SPEED]cm/s',
+        'de': 'wenn [MID] wahrgenommen wird, fliege nach x:[X] y:[Y] z:[Z] basierend auf dem Mission Pad mit [SPEED]cm/s'
     },
     edu_curve: {
         'ja': '[MID]を検出していたら、ミッションパッドを基準に x:[X1] y:[Y1] z:[Z1] から x:[X2] y:[Y2] z:[Z2] に[SPEED]cm/s でカーブしながら飛ぶ',
         'ja-hira': '[MID]がみつかっていたら、ミッションパッドからみて x:[X2] y:[Y2] z:[Z2] から x:[X2] y:[Y2] z:[Z2] に 1びょうで [SPEED] センチのはやさでカーブしながらとぶ',
         'en': 'when [MID] detected, fly in curve from x:[X1] y:[Y1] z:[Z1] to x:[X2] y:[Y2] z:[Z2] based on the Mission Pad at [SPEED]cm/s',
-        'fr': 'détecter [MID], ensuite voler en courbe de x:[X] y:[Y] z:[Z] à x:[X] y:[Y] z:[Z] à partir du Mission Pad à [SPEED] cm/s'
+        'fr': 'détecter [MID], ensuite voler en courbe de x:[X] y:[Y] z:[Z] à x:[X] y:[Y] z:[Z] à partir du Mission Pad à [SPEED] cm/s',
+        'de': 'wenn [MID] wahrgenommen wird, fliege in einer Kurve von x:[X1] y:[Y1] z:[Z1] nach x:[X2] y:[Y2] z:[Z2] basierend auf dem Mission Pad mit [SPEED]cm/s'
     },
     edu_jump: {
         'ja': '[MID1]と[MID2]を検出していたら、1つ目のミッションパッドを基準に x:[X] y:[Y] z:[Z] に飛んだあと、2つ目のミッションパッドの上まで[SPEED]cm/sで飛び[YAW]度に向く',
         'ja-hira': '[MID1]と[MID2]がみつかったら、1つめのミッションパッドからみて x:[X] y:[Y] z:[Z] にとんだあと2つめのミッションパッドのうえまで 1びょうで [SPEED] センチのはやさでとび、[YAW]どにむく',
         'en': 'when [MID1] [MID2] detected, fly to x:[X] y:[Y] z:[Z] based on first mission pad then fly on second mission pad at [SPEED] cm/s and rotate [YAW] degrees',
-        'fr': 'détecter [MID1] et [MID2], ensuite voler à x:[X] y:[Y] z:[Z] à partir du premier Mission Pad, faire une rotation de [YAW] degrés, et voler au deuxième Mission Pad à [SPEED] cm/s'
+        'fr': 'détecter [MID1] et [MID2], ensuite voler à x:[X] y:[Y] z:[Z] à partir du premier Mission Pad, faire une rotation de [YAW] degrés, et voler au deuxième Mission Pad à [SPEED] cm/s',
+        'en': 'wenn [MID1] [MID2] wahrgenommen wird, fliege nach x:[X] y:[Y] z:[Z] basierend auf dem ersten Mission Pad, fliege dann zum zweiten Mission Pad mit [SPEED] cm/s und drehe dich um [YAW] Grad'
     },
     clearQueue: {
         'ja': '実行待ちのコマンドをクリアする',
         'ja-Hira': 'うごくのをまっているコマンドをなくす',
         'en': 'clear command queue',
-        'fr': 'effacer la séquence de commandes'
+        'fr': 'effacer la séquence de commandes',
+        'de': 'lösche die Befehlsreihe'
     },
     pitch: {
         'ja': 'ピッチ',
         'ja-Hira': 'ピッチ',
         'en': 'pitch',
         'ru': 'наклон',
-        'fr': 'tangage'
+        'fr': 'tangage',
+        'de': 'falle',
     },
     roll: {
         'ja': 'ロール',
         'ja-Hira': 'ロール',
         'en': 'roll',
         'ru': 'крен',
-        'fr': 'roulis'
+        'fr': 'roulis',
+        'de': 'rolle'
     },
     yaw: {
         'ja': 'ヨー',
         'ja-Hira': 'ヨー',
         'en': 'yaw',
         'ru': 'вращение вокруг оси Z',
-        'fr': 'lacet'
+        'fr': 'lacet',
+        'de': 'schwanken'
     },
     vgx: {
         'ja': 'x方向の速度',
         'ja-Hira': 'xほうこうのはやさ',
         'en': 'speed x',
         'ru': 'скорость x',
-        'fr': 'vitesse sur l\'axe X'
+        'fr': 'vitesse sur l\'axe X',
+        'de': 'Geschwindigkeit x'
     },
     vgy: {
         'ja': 'y方向の速度',
         'ja-Hira': 'yほうこうのはやさ',
         'en': 'speed y',
         'ru': 'скорость y',
-        'fr': 'vitesse sur l\'axe Y'
+        'fr': 'vitesse sur l\'axe Y',
+        'de': 'Geschwindigkeit y'
     },
     vgz: {
         'ja': 'z方向の速度',
         'ja-Hira': 'zほうこうのはやさ',
         'en': 'speed z',
         'ru': 'скорость z',
-        'fr': 'vitesse sur l\'axe Z'
+        'fr': 'vitesse sur l\'axe Z',
+        'de': 'Geschwindigkeit z'
     },
     tof: {
         'ja': '地面からの高度',
         'ja-Hira': 'じめんからのたかさ',
         'en': 'height from ground',
         'ru': 'высота от земли',
-        'fr': 'hauteur du sol'
+        'fr': 'hauteur du sol',
+        'de': 'Höhe vom Boden'
     },
     height: {
         'ja': '離陸した場所からの高度',
         'ja-Hira': 'りりくしたばしょからのたかさ',
         'en': 'height from takeoff point',
         'ru': 'высота от точки взлёта',
-        'fr': 'hauteur du point de décollage'
+        'fr': 'hauteur du point de décollage',
+        'de': 'Höhe vom Startpunkt'
     },
     bat: {
         'ja': 'バッテリー残量',
         'ja-Hira': 'バッテリーざんりょう',
         'en': 'battery remaining',
         'ru': 'заряд батареи',
-        'fr': 'niveau de la batterie'
+        'fr': 'niveau de la batterie',
+        'de': 'übrige Batterieladung'
     },
     baro: {
         'ja': '気圧計による高さ',
         'ja-Hira': 'きあつけいによるたかさ',
         'en': 'height by barometer',
         'ru': 'высота по барометру',
-        'fr': 'altitude (baromètre)'
+        'fr': 'altitude (baromètre)',
+        'de': 'Höhe gemessen am Luftdruck'
     },
     time: {
         'ja': '飛行時間',
         'ja-Hira': 'ひこうじかん',
         'en': 'flying time',
         'ru': 'время полёта',
-        'fr': 'durée du vol'
+        'fr': 'durée du vol',
+        'de': 'Flugzeit'
     },
     agx: {
         'ja': 'x方向の加速度',
         'ja-Hira': 'xほうこうのかそくど',
         'en': 'acceleration x',
         'ru': 'ускорение x',
-        'fr': 'accélération sur l\'axe X'
+        'fr': 'accélération sur l\'axe X',
+        'de': 'Beschleunigung x'
     },
     agy: {
         'ja': 'y方向の加速度',
         'ja-Hira': 'yほうこうのかそくど',
         'en': 'acceleration y',
         'ru': 'ускорение y',
-        'fr': 'accélération sur l\'axe Y'
+        'fr': 'accélération sur l\'axe Y',
+        'de': 'Beschleunigung y'
     },
     agz: {
         'ja': 'z方向の加速度',
         'ja-Hira': 'zほうこうのかそくど',
         'en': 'acceleration z',
         'ru': 'ускорение z',
-        'fr': 'accélération sur l\'axe Z'
+        'fr': 'accélération sur l\'axe Z',
+        'de': 'Beschleunigung z'
     }
 };
 
@@ -649,7 +681,8 @@ class Scratch3Tello {
                                     'ja': '前',
                                     'ja-Hira': 'まえ',
                                     'en': 'forward',
-                                    'fr': 'avant'
+                                    'fr': 'avant',
+                                    'de': 'vorwärts'
                                 };
                                 return msg[this.locale] || msg['en'];
                             })(),
@@ -661,7 +694,8 @@ class Scratch3Tello {
                                     'ja': '後ろ',
                                     'ja-Hira': 'うしろ',
                                     'en': 'back',
-                                    'fr': 'arrière'
+                                    'fr': 'arrière',
+                                    'de': 'zurück'
                                 };
                                 return msg[this.locale] || msg['en'];
                             })(),
@@ -673,7 +707,8 @@ class Scratch3Tello {
                                     'ja': '左',
                                     'ja-Hira': 'ひだり',
                                     'en': 'left',
-                                    'fr': 'gauche'
+                                    'fr': 'gauche',
+                                    'de': 'links'
                                 };
                                 return msg[this.locale] || msg['en'];
                             })(),
@@ -685,7 +720,8 @@ class Scratch3Tello {
                                     'ja': '右',
                                     'ja-Hira': 'みぎ',
                                     'en': 'right',
-                                    'fr': 'droite'
+                                    'fr': 'droite',
+                                    'de': 'rechts'
                                 };
                                 return msg[this.locale] || msg['en'];
                             })(),
@@ -734,7 +770,8 @@ class Scratch3Tello {
                                     'ja': 'ランダム',
                                     'ja-Hira': 'ランダム',
                                     'en': 'random',
-                                    'fr': 'aléatoire'
+                                    'fr': 'aléatoire',
+                                    'de': 'beliebig'
                                 };
                                 return msg[this.locale] || msg['en'];
                             })(),
@@ -746,7 +783,8 @@ class Scratch3Tello {
                                     'ja': '最も近い',
                                     'ja-Hira': 'もっともちかい',
                                     'en': 'nearest',
-                                    'fr': 'le plus proche'
+                                    'fr': 'le plus proche',
+                                    'de': 'am nahesten'
                                 };
                                 return msg[this.locale] || msg['en'];
                             })(),
