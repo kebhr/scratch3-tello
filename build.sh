@@ -1,3 +1,6 @@
+#!/bin/bash
+set -eu
+
 git clone --filter=blob:none https://github.com/LLK/scratch-vm.git -b 0.2.0-prerelease.20220222132735
 git clone --filter=blob:none https://github.com/LLK/scratch-gui.git -b scratch-desktop-v3.29.0
 git clone --filter=blob:none https://github.com/LLK/scratch-desktop.git -b v3.29.1
