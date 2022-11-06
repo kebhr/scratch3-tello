@@ -121,33 +121,33 @@ const message = {
         'fr': 'voler en courbe de x:[X1] y:[Y1] z:[Z1] à x:[X2] y:[Y2] z:[Z2] à [SPEED]cm/s',
         'de': 'fliege in einer Kurve von x:[X1] y:[Y1] z:[Z1] nach x:[X2] y:[Y2] z:[Z2] mit [SPEED]cm/s'
     },
-    enable_mission_pad: {
+    enableMissionPad: {
         'ja': 'ミッションパッドを使う',
         'ja-Hira': 'ミッションパッドをつかう',
         'en': 'enable Mission Pad',
         'fr': 'activer le "Mission Pad"',
         'de': 'aktiviere das Mission Pad'
     },
-    edu_go: {
+    eduGo: {
         'ja': '[MID]を検出していたら、ミッションパッドを基準に x:[X] y:[Y] z:[Z] に [SPEED]cm/s で飛ぶ',
         'ja-Hira': '[MID]がみつかっていたら、ミッションパッドからみて x:[X] y:[Y] z:[Z] に 1びょうで [SPEED] センチのはやさでとぶ',
         'en': 'when [MID] detected, fly to x:[X] y:[Y] z:[Z] based on the Mission Pad at [SPEED]cm/s',
         'fr': 'détecter [MID], ensuite voler à x:[X] y:[Y] z:[Z] à partir du Mission Pad à [SPEED]cm/s',
         'de': 'wenn [MID] wahrgenommen wird, fliege nach x:[X] y:[Y] z:[Z] basierend auf dem Mission Pad mit [SPEED]cm/s'
     },
-    edu_curve: {
+    eduCurve: {
         'ja': '[MID]を検出していたら、ミッションパッドを基準に x:[X1] y:[Y1] z:[Z1] から x:[X2] y:[Y2] z:[Z2] に[SPEED]cm/s でカーブしながら飛ぶ',
         'ja-hira': '[MID]がみつかっていたら、ミッションパッドからみて x:[X2] y:[Y2] z:[Z2] から x:[X2] y:[Y2] z:[Z2] に 1びょうで [SPEED] センチのはやさでカーブしながらとぶ',
         'en': 'when [MID] detected, fly in curve from x:[X1] y:[Y1] z:[Z1] to x:[X2] y:[Y2] z:[Z2] based on the Mission Pad at [SPEED]cm/s',
-        'fr': 'détecter [MID], ensuite voler en courbe de x:[X] y:[Y] z:[Z] à x:[X] y:[Y] z:[Z] à partir du Mission Pad à [SPEED] cm/s',
+        'fr': 'détecter [MID], ensuite voler en courbe de x:[X1] y:[Y1] z:[Z1] à x:[X2] y:[Y2] z:[Z2] à partir du Mission Pad à [SPEED] cm/s',
         'de': 'wenn [MID] wahrgenommen wird, fliege in einer Kurve von x:[X1] y:[Y1] z:[Z1] nach x:[X2] y:[Y2] z:[Z2] basierend auf dem Mission Pad mit [SPEED]cm/s'
     },
-    edu_jump: {
+    eduJump: {
         'ja': '[MID1]と[MID2]を検出していたら、1つ目のミッションパッドを基準に x:[X] y:[Y] z:[Z] に飛んだあと、2つ目のミッションパッドの上まで[SPEED]cm/sで飛び[YAW]度に向く',
         'ja-hira': '[MID1]と[MID2]がみつかったら、1つめのミッションパッドからみて x:[X] y:[Y] z:[Z] にとんだあと2つめのミッションパッドのうえまで 1びょうで [SPEED] センチのはやさでとび、[YAW]どにむく',
         'en': 'when [MID1] [MID2] detected, fly to x:[X] y:[Y] z:[Z] based on first mission pad then fly on second mission pad at [SPEED] cm/s and rotate [YAW] degrees',
         'fr': 'détecter [MID1] et [MID2], ensuite voler à x:[X] y:[Y] z:[Z] à partir du premier Mission Pad, faire une rotation de [YAW] degrés, et voler au deuxième Mission Pad à [SPEED] cm/s',
-        'en': 'wenn [MID1] [MID2] wahrgenommen wird, fliege nach x:[X] y:[Y] z:[Z] basierend auf dem ersten Mission Pad, fliege dann zum zweiten Mission Pad mit [SPEED] cm/s und drehe dich um [YAW] Grad'
+        'de': 'wenn [MID1] [MID2] wahrgenommen wird, fliege nach x:[X] y:[Y] z:[Z] basierend auf dem ersten Mission Pad, fliege dann zum zweiten Mission Pad mit [SPEED] cm/s und drehe dich um [YAW] Grad'
     },
     clearQueue: {
         'ja': '実行待ちのコマンドをクリアする',
@@ -162,7 +162,7 @@ const message = {
         'en': 'pitch',
         'ru': 'наклон',
         'fr': 'tangage',
-        'de': 'falle',
+        'de': 'falle'
     },
     roll: {
         'ja': 'ロール',
@@ -484,13 +484,13 @@ class Scratch3Tello {
                 },
                 '---',
                 {
-                    opcode: 'enable_mission_pad',
-                    text: this._getText('enable_mission_pad'),
+                    opcode: 'enableMissionPad',
+                    text: this._getText('enableMissionPad'),
                     blockType: BlockType.COMMAND,
                 },
                 {
-                    opcode: 'edu_go',
-                    text: '(EDU) ' + this._getText('edu_go'),
+                    opcode: 'eduGo',
+                    text: '(EDU) ' + this._getText('eduGo'),
                     blockType: BlockType.COMMAND,
                     arguments: {
                         X: {
@@ -517,8 +517,8 @@ class Scratch3Tello {
                     }
                 },
                 {
-                    opcode: 'edu_curve',
-                    text: '(EDU) ' + this._getText('edu_curve'),
+                    opcode: 'eduCurve',
+                    text: '(EDU) ' + this._getText('eduCurve'),
                     blockType: BlockType.COMMAND,
                     arguments: {
                         X1: {
@@ -557,8 +557,8 @@ class Scratch3Tello {
                     }
                 },
                 {
-                    opcode: 'edu_jump',
-                    text: '(EDU) ' + this._getText('edu_jump'),
+                    opcode: 'eduJump',
+                    text: '(EDU) ' + this._getText('eduJump'),
                     blockType: BlockType.COMMAND,
                     arguments: {
                         X: {
@@ -855,20 +855,20 @@ class Scratch3Tello {
         this.telloProcessor.request(`curve ${Cast.toString(args.X1)} ${Cast.toString(args.Y1)} ${Cast.toString(args.Z1)} ${Cast.toString(args.X2)} ${Cast.toString(args.Y2)} ${Cast.toString(args.Z2)} ${Cast.toString(args.SPEED)}`);
     }
 
-    enable_mission_pad () {
+    enableMissionPad () {
         this.telloProcessor.request(`mon`);
         this.telloProcessor.request(`mdirection 2`);
     }
 
-    edu_go (args) {
+    eduGo (args) {
         this.telloProcessor.request(`go ${Cast.toString(args.X)} ${Cast.toString(args.Y)} ${Cast.toString(args.Z)} ${Cast.toString(args.SPEED)} ${args.MID}`);
     }
 
-    edu_curve (args) {
+    eduCurve (args) {
         this.telloProcessor.request(`curve ${Cast.toString(args.X1)} ${Cast.toString(args.Y1)} ${Cast.toString(args.Z1)} ${Cast.toString(args.X2)} ${Cast.toString(args.Y2)} ${Cast.toString(args.Z2)} ${Cast.toString(args.SPEED)} ${args.MID}`);
     }
 
-    edu_jump (args) {
+    eduJump (args) {
         this.telloProcessor.request(`jump ${Cast.toString(args.X)} ${Cast.toString(args.Y)} ${Cast.toString(args.Z)} ${Cast.toString(args.SPEED)} ${Cast.toString(args.YAW)} ${args.MID1} ${args.MID2}`);
     }
 
