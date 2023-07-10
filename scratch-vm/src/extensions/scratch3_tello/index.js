@@ -167,7 +167,7 @@ const message = {
     },
     eduCurve: {
         'ja': '[MID]を検出していたら、ミッションパッドを基準に x:[X1] y:[Y1] z:[Z1] から x:[X2] y:[Y2] z:[Z2] に[SPEED]cm/s でカーブしながら飛ぶ',
-        'ja-hira': '[MID]がみつかっていたら、ミッションパッドからみて x:[X2] y:[Y2] z:[Z2] から x:[X2] y:[Y2] z:[Z2] に 1びょうで [SPEED] センチのはやさでカーブしながらとぶ',
+        'ja-hira': '[MID]がみつかっていたら、ミッションパッドからみて x:[X1] y:[Y1] z:[Z1] から x:[X2] y:[Y2] z:[Z2] に 1びょうで [SPEED] センチのはやさでカーブしながらとぶ',
         'en': 'when [MID] detected, fly in curve from x:[X1] y:[Y1] z:[Z1] to x:[X2] y:[Y2] z:[Z2] based on the Mission Pad at [SPEED]cm/s',
         'fr': 'détecter [MID], ensuite voler en courbe de x:[X1] y:[Y1] z:[Z1] à x:[X2] y:[Y2] z:[Z2] à partir du Mission Pad à [SPEED] cm/s',
         'de': 'wenn [MID] wahrgenommen wird, fliege in einer Kurve von x:[X1] y:[Y1] z:[Z1] nach x:[X2] y:[Y2] z:[Z2] basierend auf dem Mission Pad mit [SPEED]cm/s',
