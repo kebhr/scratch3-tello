@@ -215,7 +215,7 @@ const message = {
         'bg': 'когато [MID1] [MID2] е засечен, лети до x:[X] y:[Y] z:[Z] според първи Mission Pad, след това според втори Mission Pad с [SPEED] см/сек и се завърти [YAW] градуса',
         'zh-tw': '偵測到 [MID1] [MID2] , 從第一個挑戰卡用 [SPEED] 公分/秒 速度及旋轉 [YAW] 角度飛往 x:[X] y:[Y] z:[Z] 第二個挑戰卡',
         'it': 'quando viene rilevato [MID1] e [MID2], vola a x:[X] y:[Y] z:[Z] in base alla prima "Mission Pad", fai una rotazione di [YAW] gradi e quindi vola alla seconda "Mission Pad" a [SPEED] cm /s',
-        'lv': 'kad konstatēts [MID1] [MID2], lidot uz x:[X1] y:[Y1] z:[Z1] atbilstoši pirmajam "Mission Pad", tad lidot uz otro "Mission Pad" ar ātrumu [SPEED]cm/s un pagriezties [YAW] grādus',
+        'lv': 'kad konstatēts [MID1] [MID2], lidot uz x:[X] y:[Y] z:[Z] atbilstoši pirmajam "Mission Pad", tad lidot uz otro "Mission Pad" ar ātrumu [SPEED]cm/s un pagriezties [YAW] grādus',
     },
     clearQueue: {
         'ja': '実行待ちのコマンドをクリアする',
