@@ -30,6 +30,7 @@ const message = {
         'bg': 'излитане',
         'zh-tw': '起飛',
         'it': 'decollo',
+        'lv': 'pacelties',
     },
     land: {
         'ja': '着陸する',
@@ -41,6 +42,7 @@ const message = {
         'bg': 'приземяване',
         'zh-tw': '降落',
         'it': 'atterraggio',
+        'lv': 'nolaisties',
     },
     up: {
         'ja': '上に [X]cm 上がる',
@@ -52,6 +54,7 @@ const message = {
         'bg': 'издигане [X] см',
         'zh-tw': '向上 [X] 公分',
         'it': 'alzarsi di [X] cm',
+        'lv': 'uz augšu [X] cm',
     },
     down: {
         'ja': '下に [X]cm 下がる',
@@ -63,6 +66,7 @@ const message = {
         'bg': 'спускане [X] см',
         'zh-tw': '向下 [X] 公分',
         'it': 'abbasarsi di [X] cm',
+        'lv': 'uz leju [X] cm',
     },
     left: {
         'ja': '左に [X]cm 動く',
@@ -74,6 +78,7 @@ const message = {
         'bg': 'наляво [X] см',
         'zh-tw': '向左 [X] 公分',
         'it': 'muovi a sinistra di [X] cm',
+        'lv': 'pa kreisi [X] cm',
     },
     right: {
         'ja': '右に [X]cm 動く',
@@ -85,6 +90,7 @@ const message = {
         'bg': 'надясно [X] см',
         'zh-tw': '向右 [X] 公分',
         'it': 'muovi a destra di [X] cm',
+        'lv': 'pa labi [X] cm',
     },
     forward: {
         'ja': '前に [X]cm 進む',
@@ -96,6 +102,7 @@ const message = {
         'bg': 'напред [X] см',
         'zh-tw': '前進 [X] 公分',
         'it': 'muovi in avanti di [X] cm',
+        'lv': 'uz priekšu [X] cm',
     },
     back: {
         'ja': '後ろに [X]cm 下がる',
@@ -107,6 +114,7 @@ const message = {
         'bg': 'назад [X] см',
         'zh-tw': '後退 [X] 公分',
         'it': 'muovi indietro di [X] cm',
+        'lv': 'atpakaļ [X] cm',
     },
     cw: {
         'ja': '[X] 度右に回る',
@@ -118,6 +126,7 @@ const message = {
         'bg': 'завъртане [X] градуса надясно',
         'zh-tw': '向右轉 [X] 度',
         'it': 'ruota di [X] gradi a destra',
+        'lv': 'pagriezties [X] grādus pa labi',
     },
     ccw: {
         'ja': '[X] 度左に回る',
@@ -129,6 +138,7 @@ const message = {
         'bg': 'завъртане [X] градуса наляво',
         'zh-tw': '向左轉 [X] 度',
         'it': 'ruota di [X] gradi a sinistra',
+        'lv': 'pagriezties [X] grādus pa kreisi',
     },
     flip: {
         'ja': '[DIRECTION]に宙返りする',
@@ -139,6 +149,7 @@ const message = {
         'bg': 'лупинг на [DIRECTION]',
         'zh-tw': '向 [DIRECTION] 方翻轉',
         'it': 'capovolgi verso [DIRECTION]',
+        'lv': 'apmest kūleni',
     },
     go: {
         'ja': 'x:[X] y:[Y] z:[Z] に [SPEED]cm/s で飛ぶ',
@@ -149,6 +160,7 @@ const message = {
         'bg': 'лети до x:[X] y:[Y] z:[Z] с [SPEED] сm/сек',
         'zh-tw': '飛往 x:[X] y:[Y] z:[Z] 以速度 [SPEED] 公分/秒',
         'it': 'vola a x:[X] y:[Y] z:[Z] in [SPEED]cm/s',
+        'lv': 'lidot uz x:[X] y:[Y] z:[Z] ar ātrumu [SPEED]cm/s',
     },
     curve: {
         'ja': 'x:[X1] y:[Y1] z:[Z1] から x:[X2] y:[Y2] z:[Z2] に [SPEED]cm/s でカーブしながら飛ぶ',
@@ -158,7 +170,8 @@ const message = {
         'de': 'fliege in einer Kurve von x:[X1] y:[Y1] z:[Z1] nach x:[X2] y:[Y2] z:[Z2] mit [SPEED]cm/s',
         'bg': 'лети от x:[X1] y:[Y1] z:[Z1] до x:[X2] y:[Y2] z:[Z2] с [SPEED] см/сек',
         'zh-tw': '曲線飛行從 x:[X1] y:[Y1] z:[Z1] 到 x:[X2] y:[Y2] z:[Z2] 以速度 [SPEED] 公分/秒',
-        'it': 'vola da x:[X1] y:[Y1] z:[Z1] a x:[X2] y:[Y2] z:[Z2] in [SPEED]cm/s',   
+        'it': 'vola da x:[X1] y:[Y1] z:[Z1] a x:[X2] y:[Y2] z:[Z2] in [SPEED]cm/s',
+        'lv': 'lidot ar līkumu no x:[X1] y:[Y1] z:[Z1] līdz x:[X2] y:[Y2] z:[Z2] ar ātrumu [SPEED]cm/s',
     },
     enableMissionPad: {
         'ja': 'ミッションパッドを使う',
@@ -169,6 +182,7 @@ const message = {
         'bg': 'активиране на Mission Pad',
         'zh-tw': '啟動挑戰卡',
         'it' : 'attiva la "Mission Pad"',
+        'lv': 'iespējot "Mission Pad"',
     },
     eduGo: {
         'ja': '[MID]を検出していたら、ミッションパッドを基準に x:[X] y:[Y] z:[Z] に [SPEED]cm/s で飛ぶ',
@@ -179,6 +193,7 @@ const message = {
         'bg': 'когато [MID] е засечен, лети от x:[X] y:[Y] z:[Z] според Mission Pad с [SPEED] см/сек',
         'zh-tw': '偵測到 [MID] 挑戰卡, 從挑戰卡飛行到 x:[X] y:[Y] z:[Z] 用 [SPEED]公分/秒 速度',
         'it': 'quando viene rilevato [MID], vola a x:[X] y:[Y] z:[Z] in base alla "Mission Pad" a [SPEED]cm/s',
+        'lv': 'kad konstatēts [MID], lidot uz x:[X] y:[Y] z:[Z] atbilstoši "Mission Pad", ar ātrumu [SPEED]cm/s',
     },
     eduCurve: {
         'ja': '[MID]を検出していたら、ミッションパッドを基準に x:[X1] y:[Y1] z:[Z1] から x:[X2] y:[Y2] z:[Z2] に[SPEED]cm/s でカーブしながら飛ぶ',
@@ -189,6 +204,7 @@ const message = {
         'bg': 'когато [MID] е засечен, лети със завой от x:[X1] y:[Y1] z:[Z1] до x:[X2] y:[Y2] z:[Z2] според Mission Pad с [SPEED] см/сек',
         'zh-tw': '偵測到 [MID] 挑戰卡, 以弧線飛行從 x:[X1] y:[Y1] z:[Z1] 到 x:[X2] y:[Y2] z:[Z2] 用 [SPEED]公分/秒 速度',
         'it': 'quando viene rilevato [MID], vola da x:[X1] y:[Y1] z:[Z1] a x:[X2] y:[Y2] z:[Z2] in base alla "Mission Pad" a [SPEED]cm/s',
+        'lv': 'kad konstatēts [MID], lidot ar līkumu no x:[X1] y:[Y1] z:[Z1] līdz x:[X2] y:[Y2] z:[Z2] atbilstoši "Mission Pad", ar ātrumu [SPEED]cm/s',
     },
     eduJump: {
         'ja': '[MID1]と[MID2]を検出していたら、1つ目のミッションパッドを基準に x:[X] y:[Y] z:[Z] に飛んだあと、2つ目のミッションパッドの上まで[SPEED]cm/sで飛び[YAW]度に向く',
@@ -199,6 +215,7 @@ const message = {
         'bg': 'когато [MID1] [MID2] е засечен, лети до x:[X] y:[Y] z:[Z] според първи Mission Pad, след това според втори Mission Pad с [SPEED] см/сек и се завърти [YAW] градуса',
         'zh-tw': '偵測到 [MID1] [MID2] , 從第一個挑戰卡用 [SPEED] 公分/秒 速度及旋轉 [YAW] 角度飛往 x:[X] y:[Y] z:[Z] 第二個挑戰卡',
         'it': 'quando viene rilevato [MID1] e [MID2], vola a x:[X] y:[Y] z:[Z] in base alla prima "Mission Pad", fai una rotazione di [YAW] gradi e quindi vola alla seconda "Mission Pad" a [SPEED] cm /s',
+        'lv': 'kad konstatēts [MID1] [MID2], lidot uz x:[X] y:[Y] z:[Z] atbilstoši pirmajam "Mission Pad", tad lidot uz otro "Mission Pad" ar ātrumu [SPEED]cm/s un pagriezties [YAW] grādus',
     },
     clearQueue: {
         'ja': '実行待ちのコマンドをクリアする',
@@ -209,6 +226,7 @@ const message = {
         'bg': 'изтриване на командите',
         'zh-tw': '清除命令佇列',
         'it' : 'elimina la sequenza di comandi',
+        'lv': 'notīrīt komandu rindu',
     },
     pitch: {
         'ja': 'ピッチ',
@@ -219,7 +237,8 @@ const message = {
         'de': 'falle',
         'bg': 'накланяне',
         'zh-tw': '俯仰',
-        'it' : 'lancio'
+        'it' : 'lancio',
+        'lv': 'slīpums',
     },
     roll: {
         'ja': 'ロール',
@@ -231,6 +250,7 @@ const message = {
         'bg': 'завъртане',
         'zh-tw': '翻滾',
         'it' : 'rotolare',
+        'lv': 'rotācija',
     },
     yaw: {
         'ja': 'ヨー',
@@ -242,6 +262,7 @@ const message = {
         'bg': 'завъртане',
         'zh-tw': '偏擺',
         'it': 'imbardata',
+        'lv': 'pagrieziens',
     },
     vgx: {
         'ja': 'x方向の速度',
@@ -253,6 +274,7 @@ const message = {
         'bg': 'скорост x',
         'zh-tw': 'x方向的速度',
         'it' : 'velocità sull\'asse x',
+        'lv': 'x ātrums',
     },
     vgy: {
         'ja': 'y方向の速度',
@@ -264,6 +286,7 @@ const message = {
         'bg': 'скорост y',
         'zh-tw': 'y方向的速度',
         'it' : 'velocità sull\'asse y',
+        'lv': 'y ātrums',
     },
     vgz: {
         'ja': 'z方向の速度',
@@ -275,6 +298,7 @@ const message = {
         'bg': 'скорост z',
         'zh-tw': 'z方向的速度',
         'it' : 'velocità sull\'asse z',
+        'lv': 'z ātrums',
     },
     tof: {
         'ja': '地面からの高度',
@@ -286,6 +310,7 @@ const message = {
         'bg': 'височина от земята',
         'zh-tw': '距離地面高度',
         'it': 'altezza dal suolo',
+        'lv': 'augstums no zemes',
     },
     height: {
         'ja': '離陸した場所からの高度',
@@ -297,6 +322,7 @@ const message = {
         'bg': 'височина от точката на излитане',
         'zh-tw': '距離起飛點的高度',
         'it': 'altezza dal punto di decollo',
+        'lv': 'augstums no pacelšanās punkta',
     },
     bat: {
         'ja': 'バッテリー残量',
@@ -308,6 +334,7 @@ const message = {
         'bg': 'заряд на батерията',
         'zh-tw': '剩餘電量',
         'it' : 'livello della batteria',
+        'lv': 'atlikusi baterija',
     },
     baro: {
         'ja': '気圧計による高さ',
@@ -319,6 +346,7 @@ const message = {
         'bg': 'височина според барометър',
         'zh-tw': '氣壓計偵測高度',
         'it' : 'altitudine barometrica',
+        'lv': 'augstums pēc barometra',
     },
     time: {
         'ja': '飛行時間',
@@ -330,6 +358,7 @@ const message = {
         'bg': 'време на полета',
         'zh-tw': '飛行時間',
         'it' : 'tempo di volo',
+        'lv': 'lidojuma laiks',
     },
     agx: {
         'ja': 'x方向の加速度',
@@ -341,6 +370,7 @@ const message = {
         'bg': 'ускорение x',
         'zh-tw': 'x方向的加速度',
         'it' : 'accelerazione sull\'asse x',
+        'lv': 'paātrinājums x',
     },
     agy: {
         'ja': 'y方向の加速度',
@@ -352,6 +382,7 @@ const message = {
         'bg': 'ускорение y',
         'zh-tw': 'y方向的加速度',
         'it' : 'accelerazione sull\'asse y',
+        'lv': 'paātrinājums y',
     },
     agz: {
         'ja': 'z方向の加速度',
@@ -363,6 +394,7 @@ const message = {
         'bg': 'ускорение z',
         'zh-tw': 'z方向的加速度',
         'it' : 'accelerazione sull\'asse z',
+        'lv': 'paātrinājums z',
     }
 };
 
@@ -782,6 +814,7 @@ class Scratch3Tello {
                                     'bg': 'напред',
                                     'zh-tw': '前',
                                     'it' : 'avanti',
+                                    'lv': 'uz priekšu',
                                 };
                                 return msg[this.locale] || msg['en'];
                             })(),
@@ -798,6 +831,7 @@ class Scratch3Tello {
                                     'bg': 'назад',
                                     'zh-tw': '後',
                                     'it' : 'indietro',
+                                    'lv': 'atpakaļ',
                                 };
                                 return msg[this.locale] || msg['en'];
                             })(),
@@ -814,6 +848,7 @@ class Scratch3Tello {
                                     'bg': 'наляво',
                                     'zh-tw': '左',
                                     'it' : 'sinistra',
+                                    'lv': 'pa kreisi',
                                 };
                                 return msg[this.locale] || msg['en'];
                             })(),
@@ -830,6 +865,7 @@ class Scratch3Tello {
                                     'bg': 'надясно',
                                     'zh-tw': '右',
                                     'it' : 'destra',
+                                    'lv': 'pa labi',
                                 };
                                 return msg[this.locale] || msg['en'];
                             })(),
@@ -883,6 +919,7 @@ class Scratch3Tello {
                                     'bg': 'случаен',
                                     'zh-tw': '亂數',
                                     'it' : 'casuale',
+                                    'lv': 'nejaušs',
                                 };
                                 return msg[this.locale] || msg['en'];
                             })(),
@@ -899,6 +936,7 @@ class Scratch3Tello {
                                     'bg': 'най-близък',
                                     'zh-tw': '最近的',
                                     'it' : 'il più vicino',
+                                    'lv': 'tuvākais',
                                 };
                                 return msg[this.locale] || msg['en'];
                             })(),
