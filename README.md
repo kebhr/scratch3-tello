@@ -32,8 +32,9 @@ I am seeking sponsors on [Patreon](https://www.patreon.com/scratch3_tello) to co
 - Ру́сский (Thanks to [@cirodil](https://github.com/cirodil))
 - Français (Thanks to Ryan Perry)
 - Deutsch (Thanks to [@DiWoWet](https://github.com/DiWoWet))
-- български (Thanks to [@aladzhov](https://github.com/aladzhov))
+- Български (Thanks to [@aladzhov](https://github.com/aladzhov))
 - 繁體中文 (Thanks to James Huang)
+- Українська
 
 Feel free to create a pull request for adding more languages!
 
