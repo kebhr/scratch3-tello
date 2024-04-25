@@ -34,6 +34,8 @@ I am seeking sponsors on [Patreon](https://www.patreon.com/scratch3_tello) to co
 - Deutsch (Thanks to [@DiWoWet](https://github.com/DiWoWet))
 - Български (Thanks to [@aladzhov](https://github.com/aladzhov))
 - 繁體中文 (Thanks to James Huang)
+- Italian (Thank to [@Haldosax](https://github.com/Haldosax))
+- Latvian (Thank to [@berserks03](https://github.com/berserks03))
 - Українська (Thanks to [@MaxVolobuev](https://github.com/MaxVolobuev))
 
 Feel free to create a pull request for adding more languages!
